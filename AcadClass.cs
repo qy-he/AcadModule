@@ -270,5 +270,32 @@ namespace AcadModule
             }
         }
 
+        [CommandMethod("AcsListPoint")]
+        public void AcsListPoint()
+        {
+            Point3d pt1 = new Point3d(60,100,0);
+            Point3d pt2 = new Point3d(20, 352, 0);
+            Point3d pt3 = new Point3d(10, 900, 0);
+            Point3d pt4 = new Point3d(134, 1530, 0);
+            Point3d pt5 = new Point3d(12.4, 741.8, 0);
+            Point3d pt6 = new Point3d(207, 1297, 0);
+            Point3d pt7 = new Point3d(42, 1123.5, 0);
+            Point3d pt8 = new Point3d(36.4, 561.5, 0);
+            Point3d pt9 = new Point3d(23.6, 734.1, 0);
+            List<Point3d> list = new List<Point3d>();
+            list.Add(pt1);
+            list.Add(pt2);
+            list.Add(pt3);
+            list.Add(pt4);
+            list.Add(pt5);
+            list.Add(pt6);
+            list.Add(pt7);
+            list.Add(pt8);
+            list.Add(pt9);
+            double height = 350;
+            List<List<Point3d>> pList = AcadFunc.GetLinePointList(list, height);
+            double tolerance = 20;
+            List<ObjectId> idList = AcadFunc.CreatePolylines(pList, tolerance);
+        }
     }
 }

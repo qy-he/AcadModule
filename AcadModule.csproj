@@ -68,6 +68,7 @@
     <Compile Include="Json\DeviceBusiness.cs" />
     <Compile Include="Json\DeviceModule.cs" />
     <Compile Include="MLeaderFunc.cs" />
+    <Compile Include="PointTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextStyleFunc.cs" />
   </ItemGroup>

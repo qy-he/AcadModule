@@ -250,5 +250,77 @@ namespace AcadModule
                 tx.Commit();
             }
         }
+
+        public static List<ObjectId> CreatePolylines(List<List<Point3d>> pList, double tolerance)
+        {
+            List<ObjectId> lineList = new List<ObjectId>();
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Database db = doc.Database;
+            using (Transaction tx = db.TransactionManager.StartTransaction())
+            {
+                PointTool pTool = new PointTool();
+                foreach (var list in pList)
+                {
+                    List<Point3d> newList = pTool.GetNewBoundingBox(list, tolerance);
+                    if (newList != null)
+                    {
+                        Polyline pLine = new Polyline();
+                        foreach (var item in newList)
+                        {
+                            Point2d pt = new Point2d(item.X, item.Y);
+                            pLine.AddVertexAt(0, pt, 0, 0, 0);
+                        }
+                        pLine.Closed = true;
+                        ObjectId lineObjectId = db.AddToModelSpace(pLine);
+                        lineList.Add(lineObjectId);
+                    }
+                }
+                tx.Commit();
+            }
+            return lineList;
+        }
+
+        public static List<List<Point3d>> GetLinePointList(List<Point3d> list, double height)
+        {
+            List<List<Point3d>> pLists = new List<List<Point3d>>();
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Database db = doc.Database;
+            using (Transaction tx = db.TransactionManager.StartTransaction())
+            {
+                PointTool pTool = new PointTool();
+                Point3d maxPt = pTool.GetMaxPoint(list);
+                Point3d minPt = pTool.GetMinPoint(list);
+                double maxheight = maxPt.Y - minPt.Y;
+                double num = maxheight / height;
+                int rowCount = 0;
+                if (num % 1 == 0)
+                {
+                    rowCount = Convert.ToInt32(num);
+                }
+                else
+                {
+                    rowCount = Convert.ToInt32(num) + 1;
+                }
+                double actualheight = maxheight / rowCount;
+                for (int i = 0; i < rowCount; i++)
+                {
+                    List<Point3d> pList = new List<Point3d>();
+                    foreach (Point3d pt in list)
+                    {
+                        if (pt.Y >= (maxPt.Y - (actualheight*(i+1))) && pt.Y <= (maxPt.Y-(i* actualheight)))
+                        {
+                            pList.Add(pt);
+                        }
+                    }
+                    pList = pTool.GetBoundingBox(pList);
+                    if (pList != null)
+                    {
+                        pLists.Add(pList);
+                    }
+                }
+                tx.Commit();
+            }
+            return pLists;
+        }
     }
 }
