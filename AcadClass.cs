@@ -214,29 +214,61 @@ namespace AcadModule
             Database db = doc.Database;
             using (Transaction tx = db.TransactionManager.StartTransaction())
             {
-                BlockTable acBlkTbl = tx.GetObject(db.BlockTableId, OpenMode.ForRead) as BlockTable;
-                BlockTableRecord acBlkTblRec = tx.GetObject(acBlkTbl[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
+                Point3d pt1 = new Point3d(0, 0, 0);
+                Point3d pt2 = new Point3d(300, 300, 0);
                 Polyline polyline = new Polyline();
-                Point2d p1 = new Point2d(100,100);
-                Point2d p2 = new Point2d(100, 300);
-                Point2d p3 = new Point2d(300, 200);
+                Point2d p1 = new Point2d(Math.Min(pt1.X, pt2.X), Math.Min(pt1.Y, pt2.Y));
+                Point2d p2 = new Point2d(Math.Max(pt1.X, pt2.X), Math.Min(pt1.Y, pt2.Y));
+                Point2d p3 = new Point2d(Math.Max(pt1.X, pt2.X), Math.Max(pt1.Y, pt2.Y));
+                Point2d p4 = new Point2d(Math.Min(pt1.X, pt2.X), Math.Max(pt1.Y, pt2.Y));
+
                 polyline.AddVertexAt(0, p1, 0, 0, 0);
                 polyline.AddVertexAt(0, p2, 0, 0, 0);
                 polyline.AddVertexAt(0, p3, 0, 0, 0);
+                polyline.AddVertexAt(0, p4, 0, 0, 0);
                 polyline.Closed = true;
                 ObjectId objectid = db.AddToModelSpace(polyline);
+                // Create the parameters for our associative path array
+
                 ObjectIdCollection basePt = new ObjectIdCollection();
                 basePt.Add(objectid);
-                Hatch hatch = new Hatch();
-                acBlkTblRec.AppendEntity(hatch);
-                tx.AddNewlyCreatedDBObject(hatch, true);
-                hatch.SetDatabaseDefaults();
-                hatch.SetHatchPattern(HatchPatternType.PreDefined, "SOLID");
-                hatch.Associative = false;
-                hatch.AppendLoop(HatchLoopTypes.Outermost, basePt);
-                hatch.EvaluateHatch(true);
+                VertexRef BasePoint = new VertexRef(Point3d.Origin);
+                int ColumnCount = 26;
+                int CSpacing = 20;
+                int RSpacing = 20;
+                int ColumnWidth = Convert.ToInt32(polyline.GeometricExtents.MaxPoint.X - polyline.GeometricExtents.MinPoint.X);
+                int RowHeight = Convert.ToInt32(polyline.GeometricExtents.MaxPoint.Y - polyline.GeometricExtents.MinPoint.Y);
+                int ColumnSpacing = CSpacing + ColumnWidth;
+                int RowCount = 2;
+                int RowSpacing = RSpacing + RowHeight;
+                int LevelCount = 1;
+                ArrayFunc.CreateArray(basePt, BasePoint, ColumnCount, ColumnSpacing, RowCount, RowSpacing, LevelCount);
+                AssocManager.EvaluateTopLevelNetwork(db, null, 0);
+                Entity entity = (Entity)objectid.GetObject(OpenMode.ForWrite);
+                entity.Erase(true);
+
+                double rColumnSpacing = (polyline.GeometricExtents.MaxPoint.X - polyline.GeometricExtents.MinPoint.X) / 2;
+                double rRowSpacing = (polyline.GeometricExtents.MaxPoint.Y - polyline.GeometricExtents.MinPoint.Y) / 2;
+
+                AcadFunc.CreateSingleCrystalSiliconModule(ColumnCount, RowCount, CSpacing, RSpacing, ColumnWidth, RowHeight, polyline.GeometricExtents.MinPoint.X, polyline.GeometricExtents.MinPoint.Y, ObjectId.Null, ObjectId.Null);
+                //BlockTable acBlkTbl = tx.GetObject(db.BlockTableId, OpenMode.ForRead) as BlockTable;
+                //BlockTableRecord acBlkTblRec = tx.GetObject(acBlkTbl[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
+                //ObjectIdCollection basePt = new ObjectIdCollection();
+                //basePt.Add(objectid);
+                //Hatch hatch = new Hatch();
+                //acBlkTblRec.AppendEntity(hatch);
+                //tx.AddNewlyCreatedDBObject(hatch, true);
+                //hatch.SetDatabaseDefaults();
+                //hatch.SetHatchPattern(HatchPatternType.PreDefined, "SOLID");
+                //hatch.Associative = false;
+                //hatch.AppendLoop(HatchLoopTypes.Outermost, basePt);
+                //hatch.EvaluateHatch(true);
+
+
+
                 tx.Commit();
             }
         }
+
     }
 }
