@@ -1,4 +1,5 @@
 ﻿using Autodesk.AutoCAD.ApplicationServices;
+using Autodesk.AutoCAD.Colors;
 using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Geometry;
@@ -59,13 +60,183 @@ namespace AcadModule
         {
             string filePath = @"D:\WxDoc\WeChat Files\wxid_mfa0u7d7ad3y22\FileStorage\File\2023-07\组件-带中心线.dwg";
             Dictionary<string, double> dictionary = new Dictionary<string, double>();
-            double height = 800;
-            double width = 200;
-            dictionary.Add("高度", height);
-            dictionary.Add("宽度", width);
-            var insertPoint = new Point3d(1000, 0, 0);
+            dictionary.Add("高度", 30000);
+            dictionary.Add("宽度", 40);
+            var insertPoint = new Point3d(0, 437, 0);
+            BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, Math.PI * 270 / 180, insertPoint, dictionary);
+            dictionary["高度"] = 30000;
+            dictionary["宽度"] = 40;
+            insertPoint = new Point3d(0, 1837, 0);
+            BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, Math.PI * 270 / 180, insertPoint, dictionary);
+            dictionary["高度"] = 30000;
+            dictionary["宽度"] = 40;
+            insertPoint = new Point3d(0, 2731, 0);
+            BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, Math.PI * 270 / 180, insertPoint, dictionary);
+            dictionary["高度"] = 30000;
+            dictionary["宽度"] = 40;
+            insertPoint = new Point3d(0, 4131, 0);
+            BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, Math.PI * 270 / 180, insertPoint, dictionary);
+
+
+            dictionary["高度"] = 4600;
+            dictionary["宽度"] = 40;
+            insertPoint = new Point3d(992, 0, 0);
+            BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, 0, insertPoint, dictionary);
+            dictionary["高度"] = 4600;
+            dictionary["宽度"] = 40;
+            insertPoint = new Point3d(4992, 0, 0);
+            BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, 0, insertPoint, dictionary);
+            dictionary["高度"] = 4600;
+            dictionary["宽度"] = 40;
+            insertPoint = new Point3d(8992, 0, 0);
+            BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, 0, insertPoint, dictionary);
+            dictionary["高度"] = 4600;
+            dictionary["宽度"] = 40;
+            insertPoint = new Point3d(12992, 0, 0);
+            BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, 0, insertPoint, dictionary);
+            dictionary["高度"] = 4600;
+            dictionary["宽度"] = 40;
+            insertPoint = new Point3d(16992, 0, 0);
+            BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, 0, insertPoint, dictionary);
+            dictionary["高度"] = 4600;
+            dictionary["宽度"] = 40;
+            insertPoint = new Point3d(20992, 0, 0);
+            BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, 0, insertPoint, dictionary);
+            dictionary["高度"] = 4600;
+            dictionary["宽度"] = 40;
+            insertPoint = new Point3d(24992, 0, 0);
+            BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, 0, insertPoint, dictionary);
+            dictionary["高度"] = 4600;
+            dictionary["宽度"] = 40;
+            insertPoint = new Point3d(28992, 0, 0);
             BlockFunc.InsertDwgFile(filePath, Path.GetFileNameWithoutExtension(filePath), 1, 0, insertPoint, dictionary);
         }
 
+        [CommandMethod("AcsTextStyle")]
+        public void AcsTextStyle()
+        {
+            string styleName = "SEPD_TJ";
+            string FontName = "sepd_tss.shx";
+            string BigFontName = "sepd_HZT.SHX";
+            ObjectId objectid = TextStyleFunc.GetTextStyle(styleName, FontName, BigFontName);
+        }
+
+        [CommandMethod("AcsDimStyle")]
+        public void AcsDimStyle()
+        {
+            string styleName = "SEPD_TJ";
+            string FontName = "sepd_tss.shx";
+            string BigFontName = "sepd_HZT.SHX";
+            DimStyleInfo dimInfo = new DimStyleInfo();
+            dimInfo.Name = "Sepd_1_100_1";
+            dimInfo.Dimblk = DimTools.GetArrowObjectId(Application.DocumentManager.MdiActiveDocument.Database, DimArrowBlock.ArchitecturalTick);
+            dimInfo.Dimblk1 = DimTools.GetArrowObjectId(Application.DocumentManager.MdiActiveDocument.Database, DimArrowBlock.ClosedFilled);
+            dimInfo.Dimaltf = 25;
+            dimInfo.Dimaltu = 2;
+            dimInfo.Dimarcsym = 0;
+            dimInfo.Dimasz = 50;
+            dimInfo.Dimatfit = 3;
+            dimInfo.Dimalttd = 2;
+            dimInfo.Dimadec = 2;
+            dimInfo.Dimcen = 0;
+            dimInfo.Dimazin = 2;
+            dimInfo.Dimaltd = 2;
+            dimInfo.Dimzin = 8;
+            dimInfo.Dimclre = Color.FromColorIndex(ColorMethod.ByLayer, 2);
+            dimInfo.Dimclrd = Color.FromColorIndex(ColorMethod.ByLayer, 2);
+            dimInfo.Dimclrt = Color.FromRgb(255,255,255);
+            dimInfo.Dimdec = 0;
+            dimInfo.Dimdle = 100;
+            dimInfo.Dimdli = 100;
+            dimInfo.Dimdsep = '.';
+            dimInfo.Dimexe = 100;
+            dimInfo.Dimtdec = 0;
+            dimInfo.Dimexo = 200;
+            dimInfo.Dimfxlen = 600;
+            dimInfo.Dimgap = 25;
+            dimInfo.Dimjogang = Math.PI /4;
+            dimInfo.Dimjust = 0;
+            dimInfo.Dimldrblk = DimTools.GetArrowObjectId(Application.DocumentManager.MdiActiveDocument.Database, DimArrowBlock.ClosedFilled);
+            dimInfo.Dimlfac = 1;
+            dimInfo.Dimlunit = 2;
+            dimInfo.Dimlwd = LineWeight.ByBlock;
+            dimInfo.Dimlwe = LineWeight.ByBlock;
+            dimInfo.Dimscale = 1;
+            dimInfo.Dimtad = 1;
+            dimInfo.Dimtmove = 2;
+            dimInfo.Dimtolj = 1;
+            dimInfo.Dimtxsty = TextStyleFunc.GetTextStyle(styleName, FontName, BigFontName);
+            dimInfo.Dimtxt = 350;
+            dimInfo.Dimtoh = false;
+            dimInfo.Dimtix = true;
+            dimInfo.Dimtih = false;
+            dimInfo.Dimtofl = true;
+            ObjectId objectid = DimStyleFunc.GetDimStyle(dimInfo.Name);
+            if (objectid.IsNull)
+            {
+                try
+                {
+                    objectid = DimStyleFunc.AddDimStyle(dimInfo.Name, dimInfo);
+                }
+                catch (System.Exception)
+                {
+                }
+                
+            }
+            
+        }
+
+        [CommandMethod("AcsMLeader")]
+        public void AcsMLeader()
+        {
+            Point3d startPoint = new Point3d(100, 100, 0);
+            Point3d lastPoint = new Point3d(60, 60, 0);
+            string txt = "测试多重引线";
+            string MLstyleName = "SEPD_TJ1";
+            string txtstyleName = "SEPD_TJ";
+            string FontName = "sepd_tss.shx";
+            string BigFontName = "sepd_HZT.SHX";
+            ObjectId txtObjectid = TextStyleFunc.GetTextStyle(txtstyleName, FontName, BigFontName);
+            ObjectId objectId = MLeaderFunc.DrawMLeader(startPoint, lastPoint, txt, txtObjectid, MLstyleName);
+        }
+
+        [CommandMethod("AcsDevice")]
+        public void AcsDevice()
+        {
+            DeviceBusiness device = new DeviceBusiness();
+            device.GetDeviceModuleData(null, null);
+        }
+
+        [CommandMethod("AcsArraySilicon")]
+        public void AcsArraySilicon()
+        {
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Database db = doc.Database;
+            using (Transaction tx = db.TransactionManager.StartTransaction())
+            {
+                BlockTable acBlkTbl = tx.GetObject(db.BlockTableId, OpenMode.ForRead) as BlockTable;
+                BlockTableRecord acBlkTblRec = tx.GetObject(acBlkTbl[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
+                Polyline polyline = new Polyline();
+                Point2d p1 = new Point2d(100,100);
+                Point2d p2 = new Point2d(100, 300);
+                Point2d p3 = new Point2d(300, 200);
+                polyline.AddVertexAt(0, p1, 0, 0, 0);
+                polyline.AddVertexAt(0, p2, 0, 0, 0);
+                polyline.AddVertexAt(0, p3, 0, 0, 0);
+                polyline.Closed = true;
+                ObjectId objectid = db.AddToModelSpace(polyline);
+                ObjectIdCollection basePt = new ObjectIdCollection();
+                basePt.Add(objectid);
+                Hatch hatch = new Hatch();
+                acBlkTblRec.AppendEntity(hatch);
+                tx.AddNewlyCreatedDBObject(hatch, true);
+                hatch.SetDatabaseDefaults();
+                hatch.SetHatchPattern(HatchPatternType.PreDefined, "SOLID");
+                hatch.Associative = false;
+                hatch.AppendLoop(HatchLoopTypes.Outermost, basePt);
+                hatch.EvaluateHatch(true);
+                tx.Commit();
+            }
+        }
     }
 }

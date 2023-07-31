@@ -28,3 +28,4 @@ D:\工作\CAD二次开发练习\AcadModule\bin\Debug\zh-CN\AcWindows.resources.d
 D:\工作\CAD二次开发练习\AcadModule\obj\Debug\AcadModule.csproj.CopyComplete
 D:\工作\CAD二次开发练习\AcadModule\obj\Debug\AcadModule.dll
 D:\工作\CAD二次开发练习\AcadModule\obj\Debug\AcadModule.pdb
+D:\工作\CAD二次开发练习\AcadModule\bin\Debug\Mrf.Photovoltaic.Tools.xml

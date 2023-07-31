@@ -44,6 +44,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DotNetARX.dll</HintPath>
     </Reference>
+    <Reference Include="Mrf.Photovoltaic.Tools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Mrf.Photovoltaic.Tools.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,11 +58,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcadFunc.cs" />
     <Compile Include="ArrayFunc.cs" />
     <Compile Include="AcadClass.cs" />
     <Compile Include="BlockFunc.cs" />
     <Compile Include="DimensionFunc.cs" />
+    <Compile Include="DimStyleFunc.cs" />
+    <Compile Include="DimStyleInfo.cs" />
+    <Compile Include="Json\DeviceBusiness.cs" />
+    <Compile Include="Json\DeviceModule.cs" />
+    <Compile Include="MLeaderFunc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextStyleFunc.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

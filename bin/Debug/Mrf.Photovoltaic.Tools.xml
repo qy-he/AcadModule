@@ -1,0 +1,3783 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mrf.Photovoltaic.Tools</name>
+    </assembly>
+    <members>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.BeamLoad">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.BeamLoad.Number">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.BeamLoad.ElementlineNumberLst">
+            <summary>
+            线单元编号列表
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.BoxTransformer">
+            <summary>
+            箱变器
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.BoxTransformer.RevitId">
+            <summary>
+            在Revit中的Id
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.BoxTransformer.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.BoxTransformer.CenterPoint">
+            <summary>
+            中心点，也就是插入点
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.BoxTransformer.Width">
+            <summary>
+            宽度（单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.BoxTransformer.Height">
+            <summary>
+            高度（单位：mm)
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.CableItem">
+            <summary>
+            电缆
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.ModuleCode">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.ComboCode">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.PositivePath">
+            <summary>
+            正向路径（单位：英尺）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.NegativePath">
+            <summary>
+            逆向路径（单位：英尺）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.PositivePathInMM">
+            <summary>
+            正向路径（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.NegativePathInMM">
+            <summary>
+            逆向路径（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.PositiveLength">
+            <summary>
+            正向长度(单位:英尺)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.NegativeLength">
+            <summary>
+            逆向长度(单位:英尺)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.PositiveCableModel">
+            <summary>
+            正向
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.NegativeCableModel">
+            <summary>
+            逆向
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.Ratio">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.VoltageLevel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CableItem.CableColor">
+            <summary>
+            颜色
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.CableItem.GetPositivePathInMM">
+            <summary>
+            获取正向路径坐标列表（单位：mm）z值归0
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.CableItem.GetNegativePathInMM">
+            <summary>
+            获取逆向路径坐标列表（单位：mm）z值归0
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.Callength">
+            <summary>
+            CALLENGTH
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Callength.ElementLineNumber">
+            <summary>
+            线单元编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Callength.DataLst">
+            <summary>
+            数据列表
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.Code">
+            <summary>
+            CODE
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Code.Number">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Code.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Code.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.ConfluenceItem">
+            <summary>
+            汇流区域
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ConfluenceItem.Level">
+            <summary>
+            等级
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ConfluenceItem.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ConfluenceItem.PreCode">
+            <summary>
+            上级汇流设备编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ConfluenceItem.Id">
+            <summary>
+            模型的Revit中的Id
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ConfluenceItem.AccessibleCapacity">
+            <summary>
+            接入容量
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ConfluenceItem.ConfluenceInfos">
+            <summary>
+            汇流区域
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.ConfluenceType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ConfluenceType.Others">
+            <summary>
+            其它类型
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ConfluenceType.GroupInverter">
+            <summary>
+            组串式逆变器  以前叫"组串式逆变器-箱变-升压站"
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ConfluenceType.IntegratedInverter">
+            <summary>
+            箱逆变一体机  以前叫"箱逆变一体机"
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ConfluenceType.CentralizedInverter">
+            <summary>
+            集中式逆变器  以前叫"集中式逆变器"
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ConfluenceType.DistributedInverter">
+            <summary>
+            集散式逆变器  以前叫"集散式逆变器"
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.Constraint">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Constraint.NumberLst">
+            <summary>
+            线单元编号列表
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Constraint.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.Coord_node">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Coord_node.Number">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Coord_node.DataLst">
+            <summary>
+            数据列表
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.DeviceItem">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.Id">
+            <summary>
+            Revit中的Id
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.ConfluenceMode">
+             <summary>
+             汇流模式，有四种：
+             组串式逆变器-箱变-升压站   4  》  组串—光伏板—组串式逆变器—箱变
+            汇流箱-箱逆变一体机-升压站   4  》 组串—光伏板—汇流箱—箱逆变一体机
+            汇流箱-集中式逆变器-箱变-升压站 5 》组串—光伏板—汇流箱—集中式逆变器—箱变
+            汇流箱-集散式逆变器-箱变-升压站 5 》组串—光伏板—汇流箱—集散式逆变器—箱变
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.ConfluenceType">
+            <summary>
+            汇流模式，用枚举方法表示
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.Coord">
+            <summary>
+            插入点（单位：英尺）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CablePath">
+            <summary>
+            出线路径（单位：英尺）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CablePathInMM">
+            <summary>
+            出线路径（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CableColor">
+            <summary>
+            颜色
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.Length">
+            <summary>
+            沿x轴的长度（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.Width">
+            <summary>
+            沿y轴的宽度（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.High">
+            <summary>
+            沿z轴的高度（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.VoltageLevel">
+            <summary>
+            电压等级
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CableName">
+            <summary>
+            电缆名称
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CableSection">
+            <summary>
+            电缆截面
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CableMaterial">
+            <summary>
+            电缆材质
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CableEndDeviceCode">
+            <summary>
+            电缆终点设备编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CableStartDeviceCode">
+            <summary>
+            电缆起点设备编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CableSpecification">
+            <summary>
+            电缆规格
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CableAmpacity">
+            <summary>
+            电缆载流量
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CableLength">
+            <summary>
+            电缆长度
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CableNumber">
+            <summary>
+            电缆编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.CenterPoint">
+            <summary>
+            中心点，也就是插入点（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.ObjectId">
+            <summary>
+            在CAD中生成的对象的ObjectId对应的字符串，如果没有，则为"-1"
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.DeviceItem.GetCenterPoint">
+            <summary>
+            通过Coord获取中心点（单位：mm）z值归0
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.SubDeviceItems">
+            <summary>
+            包含的子设备，比如箱变下含有逆变器
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DeviceItem.SubPvpModuleItems">
+            <summary>
+            包含的子光伏组串，比如逆变器下含有光伏组串
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.DeviceItem.GetCablePathInMM">
+            <summary>
+            获取逆向路径坐标列表（单位：mm）,z值归0
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.DeviceItem.IsEqual(Mrf.Photovoltaic.Tools.Models.DeviceItem)">
+            <summary>
+            如果长度、宽度相同，则认为两者相同
+            </summary>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.DvGrounding">
+            <summary>
+            设备接地
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DvGrounding.TotalLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DvGrounding.JvbroundingInfos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DvGroundingInfoItem.Revit_Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DvGroundingInfoItem.Model">
+            <summary>
+            圆钢
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DvGroundingInfoItem.Material">
+            <summary>
+            镀铜
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DvGroundingInfoItem.Specification">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DvGroundingInfoItem.Depth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DvGroundingInfoItem.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.DvGroundingInfoItem.Path">
+            <summary>
+            功能描述
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.DvGroundingInfoItem.GetPathInMM">
+            <summary>
+            获取Path坐标列表（单位：mm）,将英尺转换为mm，舍弃z坐标
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.Frame_Rls">
+            <summary>
+            FRAME-RLS
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Frame_Rls.ElementlineNumber">
+            <summary>
+            线单元编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Frame_Rls.StartString">
+            <summary>
+            开始字符串
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Frame_Rls.StartDataLst">
+            <summary>
+            开始数据列表
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Frame_Rls.EndString">
+            <summary>
+            结束字符串
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Frame_Rls.EndDataLst">
+            <summary>
+            结束数据列表
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.Lib_BeamLoad">
+            <summary>
+            LIB_BEAMLOAD
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Lib_BeamLoad.Number">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Lib_BeamLoad.DataLst">
+            <summary>
+            数据列表
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.LoadComb">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.LoadComb.Number">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.LoadComb.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.LoadComb.DataLst">
+            <summary>
+            数据列表
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.MNGrounding">
+            <summary>
+            主网接地
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.MNGrounding.TotalLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.MNGrounding.MNGroundingInfos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.MNGroundingInfoItem.Mode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.MNGroundingInfoItem.Label">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.MNGroundingInfoItem.Revit_Id">
+            <summary>
+            Revit中的Id
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.MNGroundingInfoItem.Model">
+            <summary>
+            扁钢
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.MNGroundingInfoItem.Material">
+            <summary>
+            铜
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.MNGroundingInfoItem.Specification">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.MNGroundingInfoItem.Depth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.MNGroundingInfoItem.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.MNGroundingInfoItem.Path">
+            <summary>
+            功能描述
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.MNGroundingInfoItem.GetPathInMM">
+            <summary>
+            获取Path坐标列表（单位：mm）,将英尺转换为mm，舍弃z坐标
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.NDPDocument">
+            <summary>
+             NDP文档
+            </summary>
+            <summary>
+             NDP文档
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.GetConfluenceType(System.String)">
+            <summary>
+            从字符串获取汇流的类型
+            </summary>
+            <param name="confluenceMode"></param>
+            <returns>汇流的类型，如果不存在，返回默认的类型</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.GetConfluenceModeInt">
+             <summary>
+             获取汇流模式对应的整数
+            1: 组串式逆变器 - 箱变 - 升压站   4  》  组串—光伏板—组串式逆变器—箱变
+            2: 汇流箱 - 箱逆变一体机 - 升压站   4  》 组串—光伏板—汇流箱—箱逆变一体机
+            3: 汇流箱 - 集中式逆变器 - 箱变 - 升压站 5 》组串—光伏板—汇流箱—集中式逆变器—箱变
+            4: 汇流箱 - 集散式逆变器 - 箱变 - 升压站 5 》组串—光伏板—汇流箱—集散式逆变器—箱变
+            -1:失败
+             </summary>
+             <returns>如果成功，返回1、2、3或4，否则，返回-1</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.GetCommonCoord">
+            <summary>
+            获取工作坐标点（单位：mm）
+            </summary>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.ShowMessage(System.String,System.String)">
+            <summary>
+            显示提示信息
+            </summary>
+            <param name="firstLine">第一行要显示的内容</param>
+            <param name="title">对话框标题</param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.CheckAndGetPvpModuleItemData(System.Boolean)">
+            <summary>
+            检查和设置光伏组串数据 生成模型需要的必备数据：长度 宽度 编号  中心点坐标 颜色 Revit的Id
+            </summary>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.GetAbsoluteValueToCommonCoord(System.Collections.Generic.List{System.Collections.Generic.List{Mrf.CSharp.BaseTools.Point3d}})">
+            <summary>
+            考虑公共坐标点后的绝对坐标 原地修改
+            </summary>
+            <param name="pointArrLst"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.GetAbsoluteValueToCommonCoord(System.Collections.Generic.List{Mrf.CSharp.BaseTools.Point3d})">
+            <summary>
+            考虑公共坐标点后的绝对坐标 原地修改
+            </summary>
+            <param name="pointLst"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.GetAbsoluteValueToCommonCoord(Mrf.CSharp.BaseTools.Point3d)">
+            <summary>
+            考虑公共坐标点后的绝对坐标 原地修改
+            </summary>
+            <param name="point"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.FootToMillimeter(System.Collections.Generic.List{Mrf.CSharp.BaseTools.Point3d})">
+            <summary>
+            英尺转换为mm，原地修改
+            </summary>
+            <param name="point3dLst"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.CheckAndGetDeviceItemData">
+            <summary>
+            检查和设置设备数据 生成模型需要的必备数据：长度 宽度 编号  中心点坐标 颜色 Revit的Id
+            </summary>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.CheckAndGetRoadInformationData">
+            <summary>
+            检查和设置道路信息数据 创建模型需要的数据：中心线坐标 左边线坐标、右边线坐标
+            </summary>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.CheckAndGetCableInformationData">
+            <summary>
+            获取电缆信息数据 生成模型需要的数据 坐标点、颜色
+            </summary>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.CheckAndGetMNGroundingInformationData">
+            <summary>
+            检查和设置主网接地信息数据 创建模型需要的数据：起点、终点
+            </summary>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.CheckAndGetDvGroundingInformationData">
+            <summary>
+            检查和设置设备接地信息数据 创建模型需要的数据：起点、终点
+            </summary>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.CheckAndGetVBGroundingInformationData">
+            <summary>
+            检查和设置垂直接地体信息数据 创建模型需要的数据：起点、终点
+            </summary>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.SendToTxtFile(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.DeviceItem})">
+            <summary>
+            将设备的子设备和子光伏组串输出到txt文件
+            </summary>
+            <param name="deviceItemLst"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.GetDeviceItemLstFromConfluenceStructure(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.DeviceItem}@)">
+            <summary>
+            通过汇流结构获取包含设备层次关系的设备列表
+            </summary>
+            <returns>包含设备层次关系的设备列表，如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.FindDeviceItemById(System.Collections.Generic.Dictionary{System.Int32,Mrf.Photovoltaic.Tools.Models.DeviceItem},System.Int32)">
+            <summary>
+            通过Revit中的Id查找设备
+            </summary>
+            <param name="idAndDeviceMap">设备在Revit中的Id和设备的映射</param>
+            <param name="id">Revit中的Id</param>
+            <returns>获取的设备，如果找不到，返回null</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.FindDeviceItemByIdAndRemove(System.Collections.Generic.Dictionary{System.Int32,Mrf.Photovoltaic.Tools.Models.DeviceItem},System.Int32)">
+            <summary>
+            通过Revit中的Id查找设备,如果找到了，同时在映射中将其删除
+            </summary>
+            <param name="idAndDeviceMap">设备在Revit中的Id和设备的映射</param>
+            <param name="id">Revit中的Id</param>
+            <returns>获取的设备，如果找不到，返回null</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.FindDeviceItem(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.DeviceItem},System.Int32,System.String)">
+            <summary>
+            在设备列表中获取指定Id和Code的设备
+            </summary>
+            <param name="allDeviceItemLst">设备列表</param>
+            <param name="id">Revit中的Id</param>
+            <param name="code">编号</param>
+            <returns>获取的设备，如果找不到，返回null</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.FindPvpModuleItemById(System.Collections.Generic.Dictionary{System.Int32,Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem},System.Int32)">
+            <summary>
+            通过Revit中的Id查找光伏组串
+            </summary>
+            <param name="idAndPvpModuleMap">设备在Revit中的Id和设备的映射</param>
+            <param name="id">Revit中的Id</param>
+            <returns>获取的设备，如果找不到，返回null</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.FindPvpModuleItemByIdAndRemove(System.Collections.Generic.Dictionary{System.Int32,Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem},System.Int32)">
+            <summary>
+            通过Revit中的Id查找光伏组串,如果找到了，同时在映射中将其删除
+            </summary>
+            <param name="idAndPvpModuleMap">设备在Revit中的Id和设备的映射</param>
+            <param name="id">Revit中的Id</param>
+            <returns>获取的设备，如果找不到，返回null</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.FindPvpModuleItem(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem},System.Int32,System.String)">
+            <summary>
+            在光伏组串列表中获取指定Id和Code的设备
+            </summary>
+            <param name="allPvpModuleItemLst">光伏组串列表</param>
+            <param name="id">Revit中的Id</param>
+            <param name="code">编号</param>
+            <returns>获取的设光伏组串，如果找不到，返回null</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.GetAllIdAndPvpModuleMap(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem})">
+            <summary>
+            在光伏组串列表中获取指定Id和Code的设备
+            </summary>
+            <param name="allPvpModuleItemLst">光伏组串列表</param>
+            <returns>获取的设光伏组串，如果找不到，返回null</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.GetAllIdAndDeviceMap(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.DeviceItem})">
+            <summary>
+            在光伏组串列表中获取指定Id和Code的设备
+            </summary>
+            <param name="allDeviceItemLst">光伏组串列表</param>
+            <returns>获取的设光伏组串，如果找不到，返回null</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.NDPDocument.GetSimpleModel">
+            <summary>
+            获取简单模型，不包括汇流信息  针对 nDPDocument.Confluence为null的情况 用于比较早期期模型数据比较粗糙的情况，可能包括"Pvp"、"Device" "Road" 主要用于给道路提资
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.Version">
+            <summary>
+             版本
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.CommonCoord">
+            <summary>
+             公共坐标点
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.ConfluenceMode">
+             <summary>
+             汇流模式，有四种：
+             组串式逆变器-箱变-升压站   4  》  组串—光伏板—组串式逆变器—箱变
+            汇流箱-箱逆变一体机-升压站   4  》 组串—光伏板—汇流箱—箱逆变一体机
+            汇流箱-集中式逆变器-箱变-升压站 5 》组串—光伏板—汇流箱—集中式逆变器—箱变
+            汇流箱-集散式逆变器-箱变-升压站 5 》组串—光伏板—汇流箱—集散式逆变器—箱变
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.LevelCount">
+            <summary>
+            层级数量
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.Confluence">
+            <summary>
+            汇流结构
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.Pvp">
+            <summary>
+            光伏组串
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.Device">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.Box">
+            <summary>
+            箱变 是设备中的一部分对象，主要用于出图
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.Inverter">
+            <summary>
+            逆变器 是设备中的一部分对象，主要用于出图
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.CombinerBox">
+            <summary>
+            汇流箱 是设备中的一部分对象，主要用于出图
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.Cable">
+            <summary>
+            电缆（小线）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.Road">
+            <summary>
+            道路
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.MNGrounding">
+            <summary>
+            主网接地
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.DvGrounding">
+            <summary>
+            设备接地
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.VBGrounding">
+            <summary>
+            垂直接地体
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.NDPDocument.Messages">
+            <summary>
+            信息列表
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.PanelInformation">
+            <summary>
+            组件信息
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.PanelInformation.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.IsSelected">
+            <summary>
+            是否选择
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.TypeName">
+            <summary>
+            组件排布
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.AngleNS">
+            <summary>
+            南北方向的倾斜角度（单位：度）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.TotalHeight">
+            <summary>
+            组件最低点离地高H（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.ATotalLengthValue">
+            <summary>
+            组件长向尺寸A（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.ATotalLengthDistance">
+            <summary>
+            组件长向间距（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.BTotalLengthValue">
+            <summary>
+            组件短向尺寸B（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.BTotalLengthDistance">
+            <summary>
+            组件短向间距（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.D33SFileName">
+            <summary>
+            组串形式名称对应的3D3S文件名称
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.Piles">
+            <summary>
+            桩的列表
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.PileInformation">
+            <summary>
+            桩位图信息
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.PvpItems">
+            <summary>
+            光伏组件的列表
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PanelInformation.Select3D3SFileCommand">
+            <summary>
+            选择3D3S文件按钮对应的命令
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.PanelInformation.Select3D3SFileCommandRun">
+            <summary>
+            通过界面选择3d3s文件
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.PileInformation">
+            <summary>
+            桩位图信息
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.PileInformation.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PileInformation.LeftUpPoints">
+            <summary>
+            插入点,为在左上方第一根桩的位置
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PileInformation.CenterPoints">
+            <summary>
+            中心点,在光伏板中心处
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PileInformation.LeftLength">
+            <summary>
+            左侧距离插入点的长度（单位:mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PileInformation.RightLength">
+            <summary>
+            左侧距离插入点的长度（单位:mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PileInformation.UpWidth">
+            <summary>
+            上侧距离插入点的长度（单位:mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PileInformation.DownWidth">
+            <summary>
+            下侧距离插入点的长度（单位:mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PileInformation.PilePoints">
+            <summary>
+            桩所在的点坐标列表，相对于左上角的插入点
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PileInformation.Lines">
+            <summary>
+            过桩水平和垂直线的点坐标列表，相对于左上角的插入点
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.PileInformation.IsEqual(Mrf.Photovoltaic.Tools.Models.PileInformation)">
+            <summary>
+            如果左右长度、上下宽度分别相同，则认为两者相同
+            </summary>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.PvpCompoInfo">
+            <summary>
+            光伏组件信息
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpCompoInfo.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpCompoInfo.Power">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpCompoInfo.Length">
+            <summary>
+            组件长度，纵向布置时，沿着y方向，横向布置时，沿着x方向
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpCompoInfo.Width">
+            <summary>
+            组件宽度，纵向布置时，沿着x方向，横向布置时，沿着y方向
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpCompoInfo.Thickness">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.PvpItem">
+            <summary>
+            光伏方阵对象，  光伏组件组成光伏组串，光伏组串组成光伏方阵
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.AngleEW">
+            <summary>
+            东西方向的角度，即绕y轴的角度（单位：弧度制)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.AngleNS">
+            <summary>
+            南北方向的角度，即绕x轴的角度（单位：弧度制)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.Azimuth">
+            <summary>
+            水平方向的角度，即绕z轴的角度（单位：弧度制)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.Angle">
+            <summary>
+            角度（单位：弧度制)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.Width">
+            <summary>
+            沿y方向的宽度（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.Length">
+            <summary>
+            沿x方向的长度（单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.WidthPerPvpModule">
+            <summary>
+            每个光伏组串沿y方向的宽度（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.LengthPerPvpModule">
+            <summary>
+            每个光伏组串沿x方向的长度（单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.XLengthPerPvpModuleCell">
+            <summary>
+            每个光伏组件沿x方向的长度（单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.YLengthPerPvpModuleCell">
+            <summary>
+            每个光伏组件沿y方向的长度（单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.WidthProjectionPerPvpModule">
+            <summary>
+            每个光伏组串沿y方向的宽度在水平方向投影的宽度（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.CNumberPerColumn">
+            <summary>
+            表示每个光伏组串中每列光伏组件的数量(沿着y方向）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.CNumberPerRow">
+            <summary>
+            表示每个光伏组串中每行光伏组件的数量(沿着x方向）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.LateralClearance">
+            <summary>
+            表示光伏板中相邻光伏组串的横向间距(沿着x方向，单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.LongitudinalGap">
+            <summary>
+            表示光伏板中相邻光伏组串的纵向间距(沿着y方向，单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.NumberOfStringsPerLine">
+            <summary>
+            表示光伏板中每行光伏组串数量（沿着x方向)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.NumberOfStringsPerColumn">
+            <summary>
+            表示光伏板中每列光伏组串数量（沿着y方向)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.CDirection">
+            <summary>
+            光伏板中光伏组串的布置方式,有"竖向布置" 和"横向布置" 两种
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.OutDirection">
+            <summary>
+            表示小线从两侧出还是单侧，值有  "同侧出线", "+两侧出线-（西正东负）", "-两侧出线+（东正西负）"
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.Points">
+            <summary>
+            四周的边界点，方向应该为左下、右下、右上、左上（单位：英尺）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.PvpModuleInfos">
+            <summary>
+            光伏组串列表
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.PvpCompoInfo">
+            <summary>
+            光伏组串列表
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.RatedCapacity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.GroundClearance">
+            <summary>
+            组件实际最低点离地高(单位：英尺)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.SetGroundClearance">
+            <summary>
+            组件理论最低点离地高(单位：英尺) 由用户输入  14:05 2023/4/14 单位改为：m
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.Id">
+            <summary>
+            在Revit中的Id json中没有提供 只是为了传到桩位图中，组成其的光伏组串可能有一个或多个，取其中第一个的Id
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpItem.Code">
+            <summary>
+            编号 json中没有提供 只是为了传到桩位图中，组成其的光伏组串可能有一个或多个，取其中第一个的Code
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.PvpItem.GetWidthPerPvpModule(System.String@)">
+            <summary>
+            获取 每个光伏组串沿y方向的宽度（在角度方向上）（单位：mm）,化为整数
+            </summary>
+            <returns>如果成功，返回true,否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.PvpItem.GetLengthPerPvpModule(System.String@)">
+            <summary>
+            获取 每个光伏组串沿x方向的长度（单位：mm）,化为整数
+            </summary>
+            <returns>如果成功，返回true,否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.PvpItem.GetWidthProjectionPerPvpModule">
+            <summary>
+            获取 每个光伏组串沿y方向在水平方向投影的宽度（单位：mm）,化为整数
+            </summary>
+            <returns>如果成功，返回true,否则，返回false</returns>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem">
+            <summary>
+            光伏组串
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.Id">
+            <summary>
+            在Revit中的Id
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.PreCode">
+            <summary>
+            上级汇流设备编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.UniqueLabel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.Color">
+            <summary>
+            颜色
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.Points">
+            <summary>
+            边界的四个点，顺序貌似是下右 下左 上左 上右  按顺序连接（单位：英尺）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.AccessibleCapacity">
+            <summary>
+            接入容量
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.CenterPoint">
+            <summary>
+            中心点，也就是插入点 （单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.Length">
+            <summary>
+            沿着x轴的长度（单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.Width">
+            <summary>
+            沿着y轴的宽度（单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.ObjectId">
+            <summary>
+            在CAD中生成的对象的ObjectId对应的字符串，如果没有，则为"-1"
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.GetCenterPoint">
+            <summary>
+            获取中心点坐标（单位：mm）去掉了z的值
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.GetLength">
+            <summary>
+            获取沿x轴的长度（单位：mm）
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.GetWidth">
+            <summary>
+            获取沿y轴的宽度（单位：mm）
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem.IsEqual(Mrf.Photovoltaic.Tools.Models.PvpModuleInfosItem)">
+            <summary>
+            如果长度、宽度相同，则认为两者相同
+            </summary>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.RoadInfoItem">
+            <summary>
+            道路
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.Id">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.CenterLine">
+            <summary>
+            中心线（单位：英尺）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.CenterLineInMM">
+            <summary>
+            中心线（单位：mm） z为0
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.LeftLine">
+            <summary>
+            左边线（单位：英尺）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.LeftLineInMM">
+            <summary>
+            左边线（单位：mm） z为0
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.RightLine">
+            <summary>
+            右边线（单位：英尺）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.RightLineInMM">
+            <summary>
+            右边线（单位：mm） z为0
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.W">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.Revit_Id">
+            <summary>
+            Revit的Id
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.GetLength3D">
+            <summary>
+            获取长度（三维长度）(单位：英尺）
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.GetCenterLineInMM">
+            <summary>
+            获取中心线坐标列表（单位：mm）z值归0
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.GetLeftLineInMM">
+            <summary>
+            获取左边线坐标列表（单位：mm）
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.RoadInfoItem.GetRightLineInMM">
+            <summary>
+            获取右边线坐标列表（单位：mm）
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.RoadItem">
+            <summary>
+            道路
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadItem.TotalLength">
+            <summary>
+            总长度(单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.RoadItem.RoadInfos">
+            <summary>
+            道路
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.StructureCalPara">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.StructureCalPara.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.Unit_Code">
+            <summary>
+            UNIT_CODE
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Unit_Code.Number">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Unit_Code.ElementLineNumberLst">
+            <summary>
+            线单元编号列表
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.VBGrounding">
+            <summary>
+            处置接地体
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.VBGrounding.TotalLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.VBGrounding.VBGroundingInfos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.VBGroundingInfoItem.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.VBGroundingInfoItem.Model">
+            <summary>
+            圆钢
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.VBGroundingInfoItem.Material">
+            <summary>
+            镀铜
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.VBGroundingInfoItem.Specification">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.VBGroundingInfoItem.Depth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.VBGroundingInfoItem.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.VBGroundingInfoItem.Coord">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.VBGroundingInfoItem.GetCoordInMM">
+            <summary>
+            获取Coord坐标（单位：mm）,舍弃z坐标
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models._3D3SDocument">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models._3D3SDocument.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Messages">
+            <summary>
+            用于保存提示的信息列表
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Version">
+            <summary>
+             VERSION
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Unit">
+            <summary>
+             UNIT
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Material">
+            <summary>
+            MATERIAL
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Section">
+            <summary>
+            SECTION
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.CheckGroup">
+            <summary>
+            CHECKGROUP
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Node">
+            <summary>
+            NODE
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Coord_node">
+            <summary>
+            COORD-NODE
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Ele_line">
+            <summary>
+            ELE_LINE
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Constraint">
+            <summary>
+            CONSTRAINT
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.LayerAxis">
+            <summary>
+            CONSTRAINT
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Callength">
+            <summary>
+            CALLENGTH
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.StldCase">
+            <summary>
+            STLDCASE
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Lib_BeamLoad">
+            <summary>
+            LIB_BEAMLOAD
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.BeamLoad">
+            <summary>
+            BEAMLOAD
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.LoadComb">
+            <summary>
+            LOADCOMB
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Frame_Rls">
+            <summary>
+            FRAME-RLS
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.StructureCalPara">
+            <summary>
+            STRUCTURECALPARA
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Code">
+            <summary>
+            CODE
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models._3D3SDocument.Unit_Code">
+            <summary>
+            UNIT_CODE
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.ArrangementType">
+            <summary>
+            布置方式
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ArrangementType.Vertical">
+            <summary>
+            竖排2板2跨
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ArrangementType.Horizontal">
+            <summary>
+            横排4板2跨
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.BracketType">
+            <summary>
+            支架形式
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.BracketType.SinglePileSinglePillar_Welding">
+            <summary>
+            单桩单立柱-焊接"
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.BracketType.SinglePileSinglePillar_AnchorEar">
+            <summary>
+            单桩单立柱-抱箍
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.BracketType.SinglePileDoublePillar_AnchorEar">
+            <summary>
+            单桩双立柱-抱箍
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.BracketType.DoublePileDoublePillar">
+            <summary>
+            双桩双立柱
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.CheckGroup">
+            <summary>
+            优选分组
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.CheckGroup.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CheckGroup.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CheckGroup.Number">
+            <summary>
+            组号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CheckGroup.Type">
+            <summary>
+            分组类型
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CheckGroup.SectionTypeNumber">
+            <summary>
+            类型号或截面类型
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CheckGroup.SectionNumberLst">
+            <summary>
+            截面编号列表
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CheckGroup.ElementLineNumberLst">
+            <summary>
+            线单元编号列表
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.CheckGroup.LayerName">
+            <summary>
+            构件的图层
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.CheckGroup.GetDefinedCheckGroupData">
+            <summary>
+            获取指定截面号的优化分组信息数据
+            </summary>
+            <returns>优化分组信息数据</returns>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.ElementLine">
+            <summary>
+            构件信息类
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.Number">
+            <summary>
+            第一列内容， 单元号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.ElementLineType">
+            <summary>
+            第二列内容，单元类型
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.Material">
+            <summary>
+            第三列内容 材料属性
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.Section">
+             <summary>
+            截面类 能够确定第四列的截面类型和第五列的截面号 如类型为：薄壁卷边槽钢、薄壁槽钢、圆钢管
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.Node1">
+             <summary>
+            第六列内容 第一个节点数，表示起始点的坐标(单位：mm)
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.Node2">
+            <summary>
+            第七列内容 第二个节点数，表示终点的坐标(单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.Kx">
+            <summary>
+            第八列内容，表示K节点x
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.Ky">
+            <summary>
+            第九列内容，表示K节点y
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.Kz">
+            <summary>
+            第十列内容，表示K节点z
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.PlaceParameter">
+            <summary>
+            第十一列内容，表示楔形单元放置参数
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.AngleBy1Axis">
+            <summary>
+            第十二列内容，表示绕1轴转角,即剖面的转角(单位：度)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.InsertPointTypeNumber">
+            <summary>
+            第十三列内容，表示插入点类型
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.Thickness">
+            <summary>
+            第十四列内容，表示裹冰厚度
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.WeightRatio">
+            <summary>
+            第十五列内容，表示节点自重占杆件比
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.LayerAxis">
+            <summary>
+            图层信息，用来区分不同构件
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.Name">
+            <summary>
+            名称 三位字符串，用于跟Sacs的数据交换
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.StartLength">
+            <summary>
+            开始延伸长度(单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.EndLength">
+            <summary>
+            端点延伸长度(单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.GeometryStartPoint">
+            <summary>
+            几何起点坐标（考虑了开始延伸长度，单位：英尺）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.GeometryEndPoint">
+            <summary>
+            几何终点坐标（考虑了端点延伸长度，单位：英尺）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.StructuralName">
+            <summary>
+            构件名称，为了在revit中明细表用 ，比如值为："外六角螺栓（立柱）-配两平一弹一螺母"
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.InstanceId">
+            <summary>
+            在Revit模型中创建的实例的ElementId的整数表达
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.ElementLine.DataLst">
+            <summary>
+            数据列表
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.ElementLine.GetBeamOrSupportAngle">
+            <summary>
+            获取斜梁或斜撑在YZ面内的角度弧度值，在西立面看，也就是梁的角度是钝角
+            </summary>
+            <returns>弧度值,如果为檩条，将返回double.NaN</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.ElementLine.GetLength">
+            <summary>
+            获取构件的长度（单位：跟Node单位一致，如为mm或者英尺）
+            </summary>
+            <returns>如果失败，返回double.NaN</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.ElementLine.GetVectorInLength">
+            <summary>
+            获取长度方向的单位向量
+            </summary>
+            <returns>如果失败，返回new double[] { 0, 0, 0 }</returns>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.ElementLineLayer">
+            <summary>
+            构件图层枚举
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.Purlin">
+            <summary>
+            檩条
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.Beam">
+            <summary>
+            斜梁
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.BackPillar">
+            <summary>
+            后立柱
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.FrontPillar">
+            <summary>
+            前立柱
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.BackSupport">
+            <summary>
+            后斜撑
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.FrontSupport">
+            <summary>
+            前斜撑
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.BackPile">
+            <summary>
+            后桩
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.FrontPile">
+            <summary>
+            前桩
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.BigAnchorEar">
+            <summary>
+            大抱箍
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.SmallAnchorEar">
+            <summary>
+            小抱箍
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.AnchorEar">
+            <summary>
+            抱箍
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineLayer.Invalid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.ElementLineType">
+            <summary>
+            线单元类型
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineType.BEAM">
+            <summary>
+            梁
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.ElementLineType.OTHER">
+            <summary>
+            其它
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.LayerAxis">
+            <summary>
+            层面和轴线号
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.LayerAxis.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.LayerAxis.#ctor(System.Int32,Mrf.Photovoltaic.Tools.Models.ElementLineLayer)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="elementLineNumber">线单元的单元号</param>
+            <param name="elementLineLayer">图层名枚举值</param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.LayerAxis.#ctor(System.Int32,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="elementLineNumber">线单元的单元号</param>
+            <param name="layerName">图层名</param>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.LayerAxis.ElementLineNumber">
+            <summary>
+            单元号 对应具体线单元ElmentLine的Number
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.LayerAxis.ElementLineLayer">
+            <summary>
+            层面号枚举值
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.LayerAxis.LayerName">
+            <summary>
+            层面号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.LayerAxis.HorizontalAxis">
+            <summary>
+            横轴线号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.LayerAxis.VerticalAxis">
+            <summary>
+            纵轴线号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.LayerAxis.ChordType">
+            <summary>
+            弦杆类型
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.LayerAxis.TowerPipeType">
+            <summary>
+            塔架杆件类型
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.Load">
+            <summary>
+            载荷类
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Load.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Load.Number">
+            <summary>
+            载荷序号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Load.LoadCase">
+            <summary>
+            工况
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Load.TypeNumber">
+            <summary>
+            类型号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Load.Direction">
+            <summary>
+            方向
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Load.X1">
+            <summary>
+            X1，应该是是起点长度占总长度的比例
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Load.X2">
+            <summary>
+            X2，应该是是终点长度占总长度的比例
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Load.P1">
+            <summary>
+            P1，X1即起点施加的载荷
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Load.P2">
+            <summary>
+            P2，X2即终点施加的载荷
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Load.ConsiderLayout">
+            <summary>
+            是否考虑活荷载不利布置,0为不考虑，1为考虑
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Load.ElementLineNumberString">
+            <summary>
+            梁单元荷载 施加到线单元单元数字符串
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.StldCase">
+            <summary>
+            载荷工况类
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.StldCase.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.StldCase.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            构造函数        
+            </summary>
+            <param name="number">工况号</param>
+            <param name="type">工况类型</param>
+            <param name="description">工况说明</param>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.StldCase.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.StldCase.Number">
+            <summary>
+            工况号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.StldCase.Type">
+            <summary>
+            工况类型
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.StldCase.Description">
+            <summary>
+            工况说明
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.StldCase.PermanentCoefficient">
+            <summary>
+            准永久系数值
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.StldCase.GetName">
+            <summary>
+            按一定格式获取名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.Material">
+            <summary>
+            材料信息类
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Material.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Material.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            构造函数,如果steelType为"Q235"或者"Q345"或者"C30"，不区分大小写，会自动设置相关数据
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Material.Number">
+            <summary>
+            第一列 材料号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Material.Name">
+            <summary>
+            第二列 名称
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Material.MaterialType">
+            <summary>
+            第三列 材料类型
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Material.SteelType">
+            <summary>
+            钢材的屈服极限，如"Q235"
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Material.DataLst">
+            <summary>
+            数据列表
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Material.SetQ235DataLst">
+            <summary>
+            设置钢材Q235的屈服极限SteelType和相关的其它数据列表DataLst
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Material.SetQ345DataLst">
+            <summary>
+            设置钢材Q245的屈服极限SteelType和相关的其它数据列表DataLst
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Material.SetQ420DataLst">
+            <summary>
+            设置钢材Q420的屈服极限SteelType和相关的其它数据列表DataLst
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Material.SetC30DataLst">
+            <summary>
+            设置混凝土C30的属性和相关的其它数据列表DataLst
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.MaterialType">
+            <summary>
+            材料类型枚举
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.MaterialType.Null">
+            <summary>
+            默认值，当不为其它可以查询到的值时，返回该值
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.MaterialType.STEEL">
+            <summary>
+            钢
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.MaterialType.CONC">
+            <summary>
+            砼
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.MaterialType.CUSTOM">
+            <summary>
+            自定义
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.MaterialType.SRC">
+            <summary>
+            钢砼组合
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.MaterialType.ALUMINIUM">
+            <summary>
+            铝合金
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.MaterialType.STLSTEEL">
+            <summary>
+            不锈钢
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.Node">
+            <summary>
+            节点信息类
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Node.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Node.#ctor(System.Int32,Mrf.CSharp.BaseTools.Point3d)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="number">节点数</param>
+            <param name="point3d">节点坐标</param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Node.#ctor(System.String,Mrf.CSharp.BaseTools.Point3d)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">名称</param>
+            <param name="point3d">节点坐标</param>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Node.Number">
+            <summary>
+            节点数
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Node.Point3d">
+            <summary>
+            节点坐标
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Node.Name">
+            <summary>
+            名称 四位字符串，用于跟Sacs的数据交换
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Node.GetDistance(Mrf.Photovoltaic.Tools.Models.Node)">
+            <summary>
+            获取到另一节点的长度（单位：跟Node单位一致，如为mm或者英尺）
+            </summary>
+            <param name="secondNode"></param>
+            <returns>如果失败，返回double.NaN</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Node.ToCopy">
+            <summary>
+            复制成新的节点
+            </summary>
+            <returns>新的节点，跟原节点没关系</returns>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.PillarType">
+            <summary>
+            立柱型式
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.PillarType.Single">
+            <summary>
+            单立柱
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.PillarType.Double">
+            <summary>
+            双立柱
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.Section">
+            <summary>
+            剖面信息类
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdChannel(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            冷弯卷边槽钢,截面为自定义类型 Value 也就是薄壁截面 获取截面的各个属性，除了属性SectionNumber
+            </summary>
+            <param name="length1">长度（单位：mm）</param>
+            <param name="length2">宽度(单位：mm）</param>
+            <param name="length3">宽度2（单位：mm）</param>
+            <param name="thick1">厚度（单位：mm）</param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.SetColdChannelProperty(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            冷弯卷边槽钢,截面为自定义类型 Value 也就是薄壁截面 设置截面的各个属性，除了属性SectionNumber
+            </summary>
+            <param name="length1">长度（单位：mm）</param>
+            <param name="length2">宽度(单位：mm）</param>
+            <param name="length3">宽度2（单位：mm）</param>
+            <param name="thick1">厚度（单位：mm）</param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdCPayment(System.Double,System.Double,System.Double)">
+            <summary>
+            冷弯C型钢,也就是对应界面中的槽钢 截面为自定义类型 Value 也就是薄壁截面 获取截面的个数属性，除了属性SectionNumber
+            </summary>
+            <param name="length1">长度（单位：mm）</param>
+            <param name="length2">宽度(单位：mm）</param>
+            <param name="thick1">厚度（单位：mm）</param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.SetColdCPaymentProperty(System.Double,System.Double,System.Double)">
+            <summary>
+            冷弯C型钢,截面为自定义类型 Value 也就是薄壁截面 获取截面的个数属性，除了属性SectionNumber
+            </summary>
+            <param name="length1">长度（单位：mm）</param>
+            <param name="length2">宽度(单位：mm）</param>
+            <param name="thick1">厚度（单位：mm）</param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdPipe(System.Double,System.Double)">
+            <summary>
+            圆管截面,截面为基本截面 使用的是 Value 跟薄壁截面一样 使用的类型是 热轧无缝钢管与电焊钢管
+            获取截面的各个属性，除了属性SectionNumber
+            </summary>
+            <param name="diameter">直径（单位：mm）</param>
+            <param name="thick1">厚度（单位：mm）</param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.SetColdPipeProperty(System.Double,System.Double)">
+            <summary>
+            圆管截面,截面为基本截面 使用的是 Value 跟薄壁截面一样 使用的类型是 热轧无缝钢管与电焊钢管
+            获取截面的各个属性，除了属性SectionNumber
+            </summary>
+            <param name="diameter">直径（单位：mm）</param>
+            <param name="thick1">厚度（单位：mm）</param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetSection(System.String)">
+            <summary>
+            根据截面英文名称获取截面对象,设置了所有的属性，除了属性SectionNumber
+            </summary>
+            <param name="sectionEnglishName">剖面英文称</param>
+            <returns>如果失败，返回null</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetRollingSquare(System.Double,System.Double)">
+            <summary>
+            轧制截面、薄壁截面方形钢（即为正方形）,截面为DB
+            </summary>
+            <param name="length1">长度（单位：mm）</param>
+            <param name="thick1">厚度（单位：mm）</param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetRollingRectangle(System.Double,System.Double,System.Double)">
+            <summary>
+            轧制截面、薄壁截面矩形钢（即为矩形）,截面为DB
+            </summary>
+            <param name="length1">长度（单位：mm）</param>
+            <param name="length2">宽度（单位：mm）</param>
+            <param name="thick1">厚度（单位：mm）</param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetRectangle(System.Double,System.Double)">
+            <summary>
+            矩形截面,截面为VALUE
+            </summary>
+            <param name="length1">高度（单位：mm）</param>
+            <param name="length2">宽度（单位：mm）</param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetLightWeightIBeam(System.Int32)">
+            <summary>
+            轻型工字钢,截面为DB 属于内部已经定义好
+            </summary>
+            <param name="number">剖面名称代号 </param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetRollingChannel(System.Int32)">
+            <summary>
+            轧制截面、薄壁截面槽钢,截面为DB
+            </summary>
+            <param name="number">代号，可能是槽钢内部已经自定义好的，只需要输入代号即可</param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetIBeamArea(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            焊接H型钢 的面积（单位：mm2）
+            </summary>
+            <param name="length1">长度（单位：mm）</param>
+            <param name="length2">宽度(单位：mm）</param>
+            <param name="webThick">腹板厚度（单位：mm）</param>
+            <param name="faceThick">面板厚度（单位：mm）</param>
+            <returns>截面面积</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdChannelArea(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            冷弯卷边槽钢 的面积（单位：mm2）
+            </summary>
+            <param name="length1">长度（单位：mm）</param>
+            <param name="length2">宽度(单位：mm）</param>
+            <param name="length3">宽度2（单位：mm）</param>
+            <param name="thick1">厚度（单位：mm）</param>
+            <returns>截面面积</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdCPaymentArea(System.Double,System.Double,System.Double)">
+            <summary>
+            冷弯C型钢 的面积（单位：mm2）
+            </summary>
+            <param name="length1">长度（单位：mm）</param>
+            <param name="length2">宽度(单位：mm）</param>
+            <param name="thick1">厚度（单位：mm）</param>
+            <returns>截面面积</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdPipeArea(System.Double,System.Double)">
+            <summary>
+            圆管截面 的面积（单位：mm2）
+            </summary>
+            <param name="diameter">直径（单位：mm）</param>
+            <param name="thick1">厚度（单位：mm）</param>
+            <returns>截面面积</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetArea">
+            <summary>
+            获取截面的面积，自动判断截面的类型
+            </summary>
+            <returns>截面面积（单位：mm2），如果截面格式有误，返回0</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.SetSectionProperty">
+            <summary>
+            根据英文名称设置截面设置各项属性，除了属性SectionNumber，如果格式不对，会自动报错
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetThick1">
+            <summary>
+            获取截面的厚度1:Thick1
+            </summary>
+            <returns>截面厚度1（单位：mm），如果截面格式有误，返回0</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.CompareTo(Mrf.Photovoltaic.Tools.Models.Section,System.Double)">
+            <summary>
+            比较两个截面的大小，通过面积去判断，如果面积相等，通过厚度去判断，厚度大的排在前面
+            </summary>
+            <param name="otherSection">另一个截面</param>
+            <param name="tolerane">误差</param>
+            <returns>0为相等，1为大于，-1为小于</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetSectionNameLst(System.Double,System.Double,System.Int32)">
+            <summary>
+            自动判断截面的类型，不分大小写， 获取其的优选分组的截面名称列表
+            </summary>
+            <param name="lengthDistance">长度间距</param>
+            <param name="thickDistance">厚度间距</param>
+            <param name="halfTime">一侧的个数</param>
+            <returns>截面对象</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdChannelSectionNameLst(System.Double,System.Double,System.Int32)">
+            <summary>
+            获取冷弯卷边槽钢的优选分组的截面名称列表
+            </summary>
+            <param name="lengthDistance">长度间距</param>
+            <param name="thickDistance">厚度间距</param>
+            <param name="halfTime">一侧的个数</param>
+            <returns>截面名称列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdCPaymentSectionNameLst(System.Double,System.Double,System.Int32)">
+            <summary>
+            获取冷弯C型钢的优选分组的截面名称列表
+            </summary>
+            <param name="lengthDistance">长度间距</param>
+            <param name="thickDistance">厚度间距</param>
+            <param name="halfTime">一侧的个数</param>
+            <returns>截面名称列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetIBeamSectionNameLst(System.Double,System.Double,System.Int32)">
+            <summary>
+            获取焊接H型钢的优选分组的截面名称列表
+            </summary>
+            <param name="lengthDistance">长度间距</param>
+            <param name="thickDistance">厚度间距</param>
+            <param name="halfTime">一侧的个数</param>
+            <returns>截面名称列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdPipeSectionNameLst(System.Double,System.Double,System.Int32)">
+            <summary>
+            获取圆钢管的优选分组的截面名称列表
+            </summary>
+            <param name="lengthDistance">长度间距</param>
+            <param name="thickDistance">厚度间距</param>
+            <param name="halfTime">一侧的个数</param>
+            <returns>截面名称列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetBothSideValueLst(System.Double,System.Double,System.Int32)">
+            <summary>
+            通过步长和次数，获取值的左右两侧值（包括其本身）的列表，如果得到的数小于等于0，直接返回
+            </summary>
+            <param name="startValue">起始值</param>
+            <param name="valueDistance">步长</param>
+            <param name="halfTime">迭代次数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetLeftSideValueLst(System.Double,System.Double,System.Int32)">
+            <summary>
+            通过步长和次数，获取值的左侧值（包括其本身）的列表，如果得到的数小于等于0，直接返回
+            </summary>
+            <param name="startValue">起始值</param>
+            <param name="valueDistance">步长</param>
+            <param name="halfTime">迭代次数（即除了自身以外的个数）</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetSectionLst_CarefullyChosen(System.String,System.Double,System.Int32,System.Double,System.Int32,System.Double,System.Int32)">
+            <summary>
+            根据截面类型（不分大小写） 获取其的优选分组的截面对象列表 获取的截面对象属性包括SectionNumber 精选方案
+            </summary>
+            <param name="sectionName">剖面名称</param>
+            <param name="length1Distance">长度1的步长（单位：mm）</param>
+            <param name="length1HalfTime">长度1一侧的个数</param>
+            <param name="length2Distance">长度2的步长（单位：mm）</param>
+            <param name="length2HalfTime">长度2一侧的个数</param>
+            <param name="length3Distance">长度3的步长（单位：mm）</param>
+            <param name="length3HalfTime">长度3一侧的个数</param>
+            <returns>截面对象列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetSectionLst_PreliminaryRound(Mrf.Photovoltaic.Tools.Models.BracketType,System.String,Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Double)">
+            <summary>
+            根据截面类型（不分大小写） 获取其的优选分组的截面对象列表 获取的截面对象属性包括SectionNumber 粗选方案
+            </summary>
+            <param name="bracketType">支座形式，不同形式的默认初始值可能不一样</param>
+            <param name="sectionType">截面类型</param>
+            <param name="layerName">构件的类型，比如"檩条",因为可能不同的构件初始值不一样</param>
+            <param name="minThickness">最小厚度（单位：mm）</param>
+            <returns>截面对象列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.IsSectionBeSelected(Mrf.Photovoltaic.Tools.Models.Section,System.Int32,System.Int32)">
+            <summary>
+            10:27 2022/10/22  斜梁第一个数最小值80，檩条第一个数最小值70，斜撑第一个数不小于40，檩条第2个数不小于30
+            </summary>
+            <param name="section"></param>
+            <param name="minLength1"></param>
+            <param name="minLength2"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Mrf.Photovoltaic.Tools.Models.Section.IsSectionNeeded(Mrf.Photovoltaic.Tools.Models.Section)" -->
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdPipeSectionLstFromExternalFile">
+            <summary>
+            11:40 2022/6/23  对于双桩双立柱，截面类型为圆钢管时，从外部文件获取截面类型
+            </summary>
+            <returns>截面对象列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdChannelSectionLst(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Double,System.Int32,System.Double,System.Int32)">
+            <summary>
+            获取 冷弯卷边槽钢 的优选分组的截面对象列表 获取的截面对象属性包括SectionNumber 参数默认值为粗选方案
+            </summary>
+            <param name="length1">长度1（单位：mm）</param>
+            <param name="length2">长度2（单位：mm）</param>
+            <param name="length3">长度3（单位：mm）</param>
+            <param name="minThickness">最小厚度（单位：mm）</param>
+            <param name="maxThickness">最大厚度（单位：mm）</param>
+            <param name="length1Distance">长度1间距（单位：mm）</param>
+            <param name="length1HalfTime">长度1一侧的个数</param>
+            <param name="length2Distance">长度2间距（单位：mm）</param>
+            <param name="length2HalfTime">长度2一侧的个数</param>
+            <param name="length3Distance">长度3间距（单位：mm）</param>
+            <param name="length3HalfTime">长度3一侧的个数</param>
+            <returns>截面对象列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdCPaymentSectionLst(System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Double,System.Int32)">
+            <summary>
+            获取 冷弯C型钢 的优选分组的截面对象列表 获取的截面对象属性包括SectionNumber 参数默认值为粗选方案
+            </summary>
+            <param name="length1">长度1（单位：mm）</param>
+            <param name="length2">长度2（单位：mm）</param>
+            <param name="minThickness">最小厚度（单位：mm）</param>
+            <param name="maxThickness">最大厚度（单位：mm）</param>
+            <param name="length1Distance">长度1间距（单位：mm）</param>
+            <param name="length1HalfTime">长度1一侧的个数</param>
+            <param name="length2Distance">长度2间距（单位：mm）</param>
+            <param name="length2HalfTime">长度2一侧的个数</param>
+            <returns>截面对象列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdPipeSectionLst(System.Double,System.Double,System.Double,System.Double,System.Int32)">
+            <summary>
+            获取 圆钢管 的优选分组的截面对象列表 获取的截面对象属性包括SectionNumber 参数默认值为粗选方案
+            </summary>
+            <param name="length1">长度1（单位：mm）</param>
+            <param name="minThickness">最小厚度（单位：mm）</param>
+            <param name="maxThickness">最大厚度（单位：mm）</param>
+            <param name="length1Distance">长度1间距（单位：mm）</param>
+            <param name="length1HalfTime">长度1一侧的个数</param>
+            <returns>截面对象列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdCPaymentSectionLst(System.Double,System.Double,System.Double,System.Int32,System.Int32)">
+            <summary>
+            获取冷弯C型钢的优选分组的截面对象列表 获取的截面对象属性不包括SectionNumber
+            </summary>
+            <param name="length1Distance">长度1间距</param>
+            <param name="otherLengthDistance">其它长度间距</param>
+            <param name="thickDistance">厚度间距</param>
+            <param name="length1HalfTime">长度1一侧的个数</param>
+            <param name="otherHalfTime">其它一侧的个数</param>
+            <returns>截面对象列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetColdPipeSectionLst(System.Double,System.Double,System.Int32,System.Int32)">
+            <summary>
+            获取圆钢管的优选分组的截面对象列表 获取的截面对象属性不包括SectionNumber
+            </summary>
+            <param name="length1Distance">长度1间距</param>
+            <param name="thickDistance">厚度间距</param>
+            <param name="length1HalfTime">长度1一侧的个数</param>
+            <param name="otherHalfTime">其它一侧的个数</param>
+            <returns>截面对象列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetSectionData">
+            <summary>
+            获取剖面数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetHalfHeight">
+            <summary>
+            计算半高（单位：mm）  注意：由（单位：英尺）改为了（单位：mm）
+            </summary>
+            <returns>半高值</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetHalfWidth">
+            <summary>
+            计算半宽（单位：mm）  注意：由（单位：英尺）改为了（单位：mm）
+            </summary>
+            <returns>半宽值，如果为0，说明不存在</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetHeightThickness">
+            <summary>
+            计算高度的厚度（单位：mm）  注意：由（单位：英尺）改为了（单位：mm）
+            </summary>
+            <returns>肯定有值， 如果为0，说明不存在</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Models.Section.GetWidthThickness">
+            <summary>
+            计算宽度的厚度（单位：mm）  注意：由（单位：英尺）改为了（单位：mm）
+            </summary>
+            <returns>如果为圆钢管，返回double.NaN，其它类型，肯定有值</returns>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.TypeNumber">
+            <summary>
+            第一列内容，类型号或截面类型，其它依赖对象（如线单元ElementLine、SECT-COLOR等）
+            通过截面类型和截面号来定位 截面类型是内部已经规定好了的
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.SectionNumber">
+            <summary>
+            第二列内容，截面号
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.SectionType">
+            <summary>
+            第三列内容，截面定义方式
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.EnglishName">
+            <summary>   
+            第四列内容,名称 如"C160x55x20x2.5"
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.ChineseName">
+            <summary>
+            第五列内容,类型名称 如" 冷弯卷边槽钢"
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.ExtraData">
+            <summary>
+            其它数据，放在最后，分两行，不同剖面类型不一样，已经考虑
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.Type">
+            <summary>
+            剖面的类型，如薄壁卷边槽钢、薄壁槽钢、工字钢、圆钢管
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.Length1">
+            <summary>
+            长度1（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.Thick1">
+            <summary>
+            厚度1（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.Length2">
+            <summary>
+            长度2（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.Thick2">
+            <summary>
+            厚度2（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools.Models.Section.Length3">
+            <summary>
+            长度3（单位：mm）
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Models.SectionType">
+            <summary>
+            截面类型
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.SectionType.VALUE">
+            <summary>
+            /基本截面(含自定义截面)
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.SectionType.TAPERED">
+            <summary>
+            工字形楔形截面
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.SectionType.DB">
+            <summary>
+            轧制截面、薄壁截面
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.SectionType.SRC">
+            <summary>
+            材料组合截面
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.SectionType.COMB">
+            <summary>
+            实腹组合
+            </summary>
+        </member>
+        <member name="F:Mrf.Photovoltaic.Tools.Models.SectionType.LATTICE">
+            <summary>
+            格构截面
+            </summary>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile">
+            <summary>
+            从3d3s文件获取数据
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="pathName"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.Run">
+            <summary>
+            从3d3s文件获取数据
+            </summary>
+            <returns>_3D3SDocument</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.GetSectionAndValueMapFromFile">
+            <summary>
+            读取txt文件内容,判断文件是否存在
+            </summary>
+            <returns>节点和相应内容列表的映射，如果读取失败，返回空的映射</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.GetNameAndSectionMap(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取剖面名称和信息的映射,注意：剖面名称全部大写
+            </summary>
+            <param name="sectionDataLst">剖面信息字符串列表</param>
+            <returns>剖面名称和信息的映射</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.GetNodeMap(System.Collections.Generic.List{System.String})">
+             <summary>
+            获取节点信息映射
+             </summary>
+             <param name="nodeDataLst">节点信息字符串列表</param>
+             <returns>节点信息映射</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.GetMaterialMap(System.Collections.Generic.List{System.String})">
+             <summary>
+            获取材料信息映射
+             </summary>
+             <param name="materialDataLst">材料信息字符串列表</param>
+             <returns>材料信息映射</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.GetEnumValue``1(System.String)">
+            <summary>
+            获取字符串对应的枚举值
+            </summary>
+            <typeparam name="T">泛型，枚举类型</typeparam>
+            <param name="stringValue">枚举值的字符串形式</param>
+            <returns>枚举值,如果不存在，返回默认值，比如如果为引用类型，返回null，如果为值类型，返回0</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.ModifyElementLineLayer(System.Collections.Generic.Dictionary{System.Tuple{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.String},System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+             <summary>
+            对于单桩双立柱-抱箍和双桩双立柱的情况，图层名称：立柱 需要特殊处理
+            对于双桩双立柱的情况，图层名称：桩 需要特殊处理
+             </summary>
+             <param name="bracketType">支架类型</param>
+             <param name="layerAndElementLineLstMap"></param>
+             <param name="layerEnumAndNameMap"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.GetBackAndFrontElementLineLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine},System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}@,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}@)">
+            <summary>
+            获取后侧和前侧的构件列表，如果只有一侧，则放在后侧列表中
+            </summary>
+            <param name="elementLineLst">构件列表</param>
+            <param name="backElementLineLst">后侧构件列表，至少有一个</param>
+            <param name="frontElementLineLst">前侧构件列表，可能为空表</param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.GetElementLineDataLst(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取构件信息
+            </summary>
+            <param name="elementLineDataLst">构件信息字符串列表</param>
+            <returns>构件信息列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.GetLayerAndElementNumberLstMap(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Tuple{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.String}})">
+            <summary>
+            提取构件编号和图层名称映射
+            </summary>
+            <param name="layerDataLst"></param>
+            <param name="layerEnumAndNameLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.GetLayerInformation(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine},System.Collections.Generic.Dictionary{System.Tuple{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.String},System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            获取构件的图层
+            </summary>
+            <param name="elementLineLst">图元线列表</param>
+            <param name="layerAndElementNumberLstMap">图元编号和图层名称映射</param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.GetLayerInformation(System.Collections.Generic.Dictionary{System.Tuple{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.String},System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+            <summary>
+            获取构件的图层
+            </summary>
+            <param name="layerAndElementLineLstMap">图层和构件列表映射</param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.TryGetChannelSection(System.String[],System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+            获取槽钢的剖面信息
+            </summary>
+            <param name="datas"></param>
+            <param name="length1"></param>
+            <param name="length2"></param>
+            <param name="length3"></param>
+            <param name="thick1"></param>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.TryGetCPaymentSection(System.String[],System.Double@,System.Double@,System.Double@)">
+            <summary>
+            获取C型钢的剖面信息
+            </summary>
+            <param name="datas"></param>
+            <param name="length1"></param>
+            <param name="length2"></param>
+            <param name="thick1"></param>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.TryGetHTypeSection(System.String[],System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+            获取H型钢的剖面信息
+            </summary>
+            <param name="datas"></param>
+            <param name="length1"></param>
+            <param name="length2"></param>
+            <param name="thick1"></param>
+            <param name="thick2"></param>
+            <returns>如果成功，返回true，否则，返回false</returns>
+            
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.TryGetCircularTubeSection(System.String[],System.Double@,System.Double@)">
+            <summary>
+            获取圆钢管的剖面信息
+            </summary>
+            <param name="datas"></param>
+            <param name="length1"></param>
+            <param name="thick1"></param>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.TryGetMaterial(Mrf.Photovoltaic.Tools.Models.ElementLine,System.Collections.Generic.Dictionary{System.Int32,Mrf.Photovoltaic.Tools.Models.Material})">
+            <summary>
+            获取构件的材料
+            </summary>
+            <param name="each">构件</param>
+            <param name="materialMap">材料的映射</param>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.TryGetPoints(Mrf.Photovoltaic.Tools.Models.ElementLine,System.Collections.Generic.Dictionary{System.Int32,Mrf.CSharp.BaseTools.Point3d})">
+            <summary>
+            获取构件的起始点
+            </summary>
+            <param name="each">构件</param>
+            <param name="nodeMap">节点的映射</param>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetDataFromTxtFile.TryGetTypeSymbolName(Mrf.Photovoltaic.Tools.Models.ElementLine,System.Collections.Generic.Dictionary{System.String,Mrf.Photovoltaic.Tools.Models.Section})">
+            <summary>
+            获取构件的剖面类型和族类型名称
+            </summary>
+            <param name="each">构件</param>
+            <param name="nameAndSectionMap">剖面名称和信息映射</param>
+            <returns>如果成功，返回true，否则，返回false</returns>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Utils.GetPileInformation">
+            <summary>
+            获取桩位信息
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.Run(System.Collections.ObjectModel.ObservableCollection{Mrf.Photovoltaic.Tools.Models.PanelInformation})">
+            <summary>
+            主函数
+            </summary>
+            <param name="panelInformations">光伏板信息列表</param>
+            <returns>如果失败，返回空的映射</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.GetHorizontalAndVerticalLineLst(System.Collections.Generic.List{Mrf.CSharp.BaseTools.Point3d},System.Double[])">
+             <summary>
+            获取水平线和垂直线两端的点坐标列表
+             </summary>
+             <param name="newPilePointLst"></param>
+             <param name="halfWidthAndLengthArr"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.CheckWidthAndLength(System.Double,System.Double,System.Collections.Generic.List{Mrf.CSharp.BaseTools.Point3d})">
+             <summary>
+            这里需要检查一下 板的宽度和长度是否能包住桩，如果包不住，说明3d3s文件和json文件对不上
+             </summary>
+             <param name="width"></param>
+             <param name="length"></param>
+             <param name="newPilePointLst"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.GetLeftUpPointLstInJsonFile(System.Collections.Generic.List{Mrf.CSharp.BaseTools.Point3d},Mrf.CSharp.BaseTools.Point3d)">
+             <summary>
+            转换为左上角的坐标列表
+             </summary>
+             <param name="centerPointLstInJsonFile"></param>
+             <param name="newCenterPointIn3D3SDocument"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.GetCenterPointLstInJsonFile(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.PvpItem})">
+            <summary>
+            先获取各个中心点列表 z值归0
+            </summary>
+            <param name="pvpItemLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.GetCenterPointByJsonFile(System.Double,System.Double,System.Double)">
+            <summary>
+            从json文件的长度和宽度中获取中点坐标
+            </summary>
+            <param name="length">长度（单位：mm）</param>
+            <param name="width">宽度（单位：mm）</param>
+            <param name="angleNS">南北方向的角度（单位：弧度）</param>
+            <returns>三维点坐标</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.GetCenterPointBy3d3sFile(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine})">
+            <summary>
+            从3d3s文件中获取坐标中点，取所有桩的中心点
+            </summary>
+            <param name="pileLst"></param>
+            <returns>三维点坐标</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.GetPilePointsToCenterPoint(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine},Mrf.CSharp.BaseTools.Point3d)">
+            <summary>
+            获取桩坐标相对于中心坐标的坐标值,排除重复的情况
+            </summary>
+            <param name="pileLst"></param>
+            <param name="centerPoint"></param>
+            <returns>如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.GetLeftUpperPilePoint(System.Collections.Generic.List{Mrf.CSharp.BaseTools.Point3d})">
+            <summary>
+            获取桩左上方的点坐标
+            </summary>
+            <param name="pilePointLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.GetCenterPointToLeftUpperPoint(Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d)">
+            <summary>
+            获取中点相对于桩左上角的坐标点
+            </summary>
+            <param name="centerPoint"></param>
+            <param name="leftUpPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.GetPilePointToLeftUpperPoint(System.Collections.Generic.List{Mrf.CSharp.BaseTools.Point3d},Mrf.CSharp.BaseTools.Point3d)">
+            <summary>
+            获取桩坐标相对于桩左上角的坐标点列表
+            </summary>
+            <param name="pilePointLst"></param>
+            <param name="leftUpPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.GetHalfWidthAndLength(System.Double,System.Double,Mrf.CSharp.BaseTools.Point3d)">
+            <summary>
+            获取相对左上角桩坐标的下半宽、上半宽、左半长、右半长
+            </summary>
+            <param name="width"></param>
+            <param name="length"></param>
+            <param name="centerPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.GetPileInformation.GetInsertPointLst(System.Collections.Generic.List{Mrf.CSharp.BaseTools.Point3d},Mrf.CSharp.BaseTools.Point3d)">
+            <summary>
+            获取插入点列表
+            </summary>
+            <param name="centerPointLst"></param>
+            <param name="centerPoint"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile">
+            <summary>
+            将数据保存到3D3S文件
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.Run(System.String,System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}},System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.String},Mrf.Photovoltaic.Tools.Models.BracketType,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Load})">
+            <summary>
+            只创建高版本的3d3s文件    0为低版本，其它为高版本   9:26 2022/12/29 修改
+            </summary>
+            <param name="fileName"></param>
+            <param name="revitLayerAndElementLineMap"></param>
+            <param name="layerEnumAndNameMap"></param>
+            <param name="bracketType"></param>
+            <param name="loadLst"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetVersion(System.Int32)">
+            <summary>
+            获取版本
+            </summary>
+            <param name="versionIndex">0为低版本，其它为高版本</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetElementSpecificationDataLst(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+            <summary>
+            设置单元规范信息
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetStructureTypeDataLst(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+            <summary>
+            设置STRUCTURETYPE
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetElementSpecificationData(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine},System.Int32)">
+            <summary>
+            设置单元规范信息
+            </summary>
+            <param name="elementLineLst"></param>
+            <param name="specificationIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetSpecificationDataLst">
+            <summary>
+            设置规范信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetOrSetSectionNumber(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}},System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Section}},System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLineLayer})">
+             <summary>
+            根据已有的截面对象，设置桩或抱箍的截面的截面号
+             </summary>
+             <param name="revitLayerAndElementLineMap"></param>
+             <param name="typeNumberAndAllSectionLstMap"></param>
+             <param name="expecedLayerNameLst"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetPileSection(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine})">
+             <summary>
+            额外获取桩的截面对象
+             </summary>
+             <param name="elementLineLst"></param>
+             <returns>如果获取失败，返回null</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetStructureCalParaDataLst">
+            <summary>
+            获取*STRUCTURECALPARA数据列表，表示菜单内力分析->结构计算->线性分析
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetAllSectionLst(System.String,System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}},System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.String},Mrf.Photovoltaic.Tools.Models.BracketType,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.CheckGroup}@)">
+            <summary>
+            获取所有优选分组的截面对象列表，并设置所有截面的截面号 以及所有构件对应的截面对象
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+            <param name="layerEnumAndNameMap">构件图层枚举值和字符串的映射</param>
+            <param name="bracketType">支架形式，不同的形式的默认初始值可能不一样</param>
+            <param name="checkGroupLst">优选分组列表</param>
+            <returns>所有优选分组的截面对象列表,如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.SendPillarSectionDataToFile(System.String,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Section})">
+             <summary>
+            11:12 2023/4/18 为了测试的需要 输出立柱截面库
+             </summary>
+             <param name="fileName"></param>
+             <param name="pillarSectionLst"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetCombinedLoadDataLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Load})">
+            <summary>
+            获取  *LOADCOMB 数据列表
+            </summary>
+            <param name="loadLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetBeamLoadLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Load})">
+            <summary>
+            获取  *BEAMLOAD 数据列表
+            </summary>
+            <param name="loadLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetBeamLoad(Mrf.Photovoltaic.Tools.Models.Load)">
+            <summary>
+            获取  *BEAMLOAD 数据
+            </summary>
+            <param name="load"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetLib_BeamLoadLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Load},System.Int32)">
+            <summary>
+            获取  *LIB_BEAMLOAD 数据列表
+            </summary>
+            <param name="loadLst"></param>
+            <param name="versionIndex">版本代号，0为低版本，其它为高版本</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetLib_BeamLoadForLowerVersion(Mrf.Photovoltaic.Tools.Models.Load)">
+            <summary>
+            获取  *LIB_BEAMLOAD 数据 低版本
+            </summary>
+            <param name="load"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetLib_BeamLoadForHigherVersion(Mrf.Photovoltaic.Tools.Models.Load)">
+            <summary>
+            获取  *LIB_BEAMLOAD 数据 高版本
+            </summary>
+            <param name="load"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetLoadCaseLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Load},System.Int32)">
+            <summary>
+            获取 工况信息 *STLDCASE 数据列表
+            </summary>
+            <param name="loadLst"></param>
+            <param name="versionIndex">版本代号，0为低版本，其它为高版本</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetLoadCaseForLowerVersion(Mrf.Photovoltaic.Tools.Models.StldCase)">
+            <summary>
+            获取 工况信息 *STLDCASE 数据 低版本
+            </summary>
+            <param name="loadCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetLoadCaseForHigherVersion(Mrf.Photovoltaic.Tools.Models.StldCase)">
+            <summary>
+            获取 工况信息 *STLDCASE 数据 高版本
+            </summary>
+            <param name="loadCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetConstraintDataLst(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+            <summary>
+            设置支座边界条件，只有 桩的下端点 或者 下方立柱的下端点为钢固，其它都是自由
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetLowerPileLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine})">
+            <summary>
+            获取下方桩列表
+            </summary>
+            <param name="elementLineLst"></param>
+            <returns>如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetLowerNodeNumber(Mrf.Photovoltaic.Tools.Models.ElementLine)">
+            <summary>
+            获取立柱下端的节点的节点数
+            </summary>
+            <param name="elementLine"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetCallengthDataLst(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}},Mrf.Photovoltaic.Tools.Models.BracketType)">
+            <summary>
+            获取计算长度 *CALLENGTH 两侧檩条绕2轴 定义系数：2 绕3轴 定义系数：1
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+            <param name="bracketType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetCallengthDataLstForDoublePileDoublePillar(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine})">
+            <summary>
+            获取双桩双立柱的计算长度数据列表
+            </summary>
+            <param name="expectedElementLineLst"></param>
+            <returns>如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetFrameReleaseDataLst(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}},System.Int32)">
+             <summary>
+            设置单元释放，所有斜撑的两端、所有上部分立柱的上方，即有一个节点在斜梁上
+             </summary>
+             <param name="revitLayerAndElementLineMap"></param>
+             <param name="versionIndex">版本代号，0为低版本，其它为高版本</param>
+             <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetMaterialDataLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Material},System.Int32)">
+            <summary>
+            获取剖面数据列表
+            </summary>
+            <param name="materialLst"></param>
+            <param name="versionIndex">版本代号，0为低版本，其它为高版本</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetMaterialDataForLowerVersion(Mrf.Photovoltaic.Tools.Models.Material)">
+            <summary>
+            获取材料数据 低版本格式
+            </summary>
+            <param name="material"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetMaterialDataForHigherVersion(Mrf.Photovoltaic.Tools.Models.Material)">
+            <summary>
+            获取材料数据 高版本格式
+            </summary>
+            <param name="material"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetCheckGroupDataLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.CheckGroup})">
+            <summary>
+            获取优化分组信息数据列表
+            </summary>
+            <param name="checkGroupLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetCheckGroupDataLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine})">
+            <summary>
+            获取优化分组信息数据列表
+            </summary>
+            <param name="elementLineLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetSectionDataLst(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Section}})">
+            <summary>
+            获取剖面数据列表
+            </summary>
+            <param name="typeNumberAndallSectionLstMap"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetNodeDataLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node})">
+            <summary>
+            获取节点数据列表
+            </summary>
+            <param name="nodeLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetNodeData(Mrf.Photovoltaic.Tools.Models.Node)">
+            <summary>
+            获取节点数据
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetCoordNodeDataLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node})">
+            <summary>
+            获取COORD-NODE数据列表
+            </summary>
+            <param name="nodeLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetElementLineDataLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine},System.Int32)">
+            <summary>
+            获取线单元数据列表
+            </summary>
+            <param name="elementLineLst"></param>
+            <param name="versionIndex">版本代号，0为低版本，其它为高版本</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetElementLineData(Mrf.Photovoltaic.Tools.Models.ElementLine,System.Int32)">
+            <summary>
+            获取线单元数据
+            </summary>
+            <param name="elementLine"></param>
+            <param name="versionIndex">版本代号，0为低版本，其它为高版本</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetLayerAxisDataLst(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.LayerAxis})">
+            <summary>
+            获取层面和轴线号数据列表
+            </summary>
+            <param name="layerAxisLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools.Utils.SendDataTo3D3SFile.GetLayerAxisData(Mrf.Photovoltaic.Tools.Models.LayerAxis)">
+            <summary>
+            获取层面和轴线号
+            </summary>
+            <param name="layerAxis"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mrf.Photovoltaic.Tools._3D3SModel">
+            <summary>
+            创建光伏支架3D3S模型
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.Create">
+            <summary>
+            创建3D3S模型
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SetElementLineNumber(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+            <summary>
+            按一定秩序给构件设置number
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetRevitLayerAndElementLineMap(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine})">
+             <summary>
+            获取revit中图层和构件的映射，便于后面搜索  
+             </summary>
+             <param name="elementLineLst"></param>
+             <returns>如果失败，返回空的映射</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.CaculateTotalLength">
+            <summary>
+            计算檩条总长度
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SaveUserInputDataToJsonFile(System.String)">
+            <summary>
+            将界面用户输入的数据导出json文件
+            </summary>
+            <param name="absoluteFileName">json文件的全路径名称</param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SetSeciton(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+            <summary>
+            设置所有线单元的截面属性,只有中文名和最小厚度，每种构件类型对应一种截面类型
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SetPileSeciton(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+            <summary>
+            设置所有桩的截面尺寸为φPileDiameter*7
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SetAnchorEarSeciton(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+            <summary>
+            设置所有抱箍的截面尺寸为轻型工字钢：Q工10  14:12 2022/9/16 修改
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SetMaterial(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+            <summary>
+            设置所有线单元的材料属性
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+            <returns>所有材料名称和材料的映射，如果失败，返回空的映射</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SetElementLineMaterial(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}},System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLineLayer},System.String)">
+            <summary>
+            设置某种构件的材料属性,考虑其它材料已经存在的情况（如所有抱箍的材料属性为Q235，桩为C30)
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+            <param name="expectedElementLineLayerLst">要设置的构件图层名列表</param>
+            <param name="materialName">材料名称</param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetLoadLst(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+            <summary>
+            获取载荷数据列表
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SetAngleBy1Axis(System.Collections.Generic.Dictionary{Mrf.Photovoltaic.Tools.Models.ElementLineLayer,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine}})">
+            <summary>
+            统一设置属性：AngleBy1Axis 对于同一构件，如果截面类型不同，旋转角度应该不一样
+            </summary>
+            <param name="revitLayerAndElementLineMap"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetElementLineLstForVerticalArrangement(System.Double,System.Double)">
+            <summary>
+            竖排2板2跨的算法
+            </summary>
+            <param name="skipDistance">跨距</param>
+            <param name="remainDistance">悬挑长度</param>
+            <returns>如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SetNodesNumber(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node})">
+            <summary>
+            设置所有节点的节点数
+            </summary>
+            <param name="allNodeLst"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SetNodesNumber(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.ElementLine})">
+            <summary>
+            设置所有节点的节点数
+            </summary>
+            <param name="elementLineLst"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetBeamElements(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node})">
+            <summary>
+            获取所有支座中的斜梁列表
+            </summary>
+            <param name="allNodeLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetPurlinOtherNodes(System.Collections.Generic.List{Mrf.CSharp.BaseTools.Point3d},System.Double)">
+            <summary>
+            获取所有檩条除两端以外所有节点的节点列表
+            </summary>
+            <param name="purlinStartPointLst"></param>
+            <param name="skipDistance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetPurlinElements(System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node},System.Int32)">
+            <summary>
+            获取纵向的檩条列表
+            </summary>
+            <param name="nodeLst"></param>
+            <param name="purlinNumber"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetPurlinEndNodes(System.Collections.Generic.List{Mrf.CSharp.BaseTools.Point3d},System.Double,System.Double)">
+            <summary>
+            获取纵向的檩条最两边端点所在的节点列表
+            </summary>
+            <param name="purlinStartPointLst"></param>
+            <param name="totalLength"></param>
+            <param name="distance"></param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetPurlinNodes(Mrf.CSharp.BaseTools.Point3d,System.Double,System.Double)">
+            <summary>
+            获取檩条的两个端点
+            </summary>
+            <param name="pt"></param>
+            <param name="totalLength"></param>
+            <param name="distance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetTransverseNodesForVerticalArrangement(Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,System.Double,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node}@)">
+            <summary>
+            获取横向支架的各个对象列表
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.IsFrontBraceExistFor2Pile2Pillar(Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d)">
+            <summary>
+            对于双桩双立柱：根据前斜撑和血亮的夹角是否大于20°确定前斜撑是否存在
+            </summary>
+            <param name="upPoint">前斜撑上方的点</param>
+            <param name="downPoint">前斜撑下方的点</param>
+            <returns>如果存在，返回true,否则，返回false</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SinglePileSinglePillarAndWeldingFor22(Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,System.Double,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node}@)">
+            <summary>
+            单桩单立柱-焊接 竖排2板2跨
+            </summary>
+            <param name="p0"></param>
+            <param name="p2"></param>
+            <param name="p4"></param>
+            <param name="p6"></param>
+            <param name="p8"></param>
+            <param name="p9"></param>
+            <param name="p10"></param>
+            <param name="p11"></param>
+            <param name="p12"></param>
+            <param name="p13"></param>
+            <param name="p14"></param>
+            <param name="skipDistance"></param>
+            <param name="singleTypeTransverseNodeLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SinglePipeSinglePillarAndAnchorEarFor22(Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,System.Double,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node}@)">
+            <summary>
+            单桩单立柱-抱箍 竖排2板2跨
+            </summary>
+            <param name="p0"></param>
+            <param name="p2"></param>
+            <param name="p4"></param>
+            <param name="p6"></param>
+            <param name="p8"></param>
+            <param name="p9"></param>
+            <param name="p10"></param>
+            <param name="p11"></param>
+            <param name="p12"></param>
+            <param name="p13"></param>
+            <param name="p14"></param>
+            <param name="skipDistance"></param>
+            <param name="singleTypeTransverseNodeLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SinglePileDoublePillarAndAnchorEarFor22(Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,System.Double,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node}@)">
+            <summary>
+            单桩双立柱-抱箍 竖排2板2跨
+            </summary>
+            <param name="p0"></param>
+            <param name="p2"></param>
+            <param name="p4"></param>
+            <param name="p6"></param>
+            <param name="p8"></param>
+            <param name="p9"></param>
+            <param name="p10"></param>
+            <param name="p11"></param>
+            <param name="p12"></param>
+            <param name="p13"></param>
+            <param name="p14"></param>
+            <param name="skipDistance"></param>
+            <param name="singleTypeTransverseNodeLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetAnchorEarTheoreticalThickness(System.Double)">
+            <summary>
+            通过体积相等原理，计算抱箍理论厚度 实际抱箍有前后各一个 记得乘以2
+            </summary>
+            <param name="extraLength">桩之外额外伸出来的长度（单位：mm）</param>
+            <returns>厚度值，保留一位小数（单位：mm）</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetAnchorEarOneSideLength(System.Double)">
+            <summary>
+            获取单立柱抱箍一侧理论的长度
+            </summary>
+            <param name="extraLength">桩之外额外伸出来的长度（单位：mm）</param>
+            <returns>长度（单位：mm）</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetBraceLowerPointAndSetHeightForSingleType(Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,System.Double)">
+            <summary>
+            获取p13新的坐标点，并计算和设置单立柱形式（包括焊接和抱箍）的立柱支点的高度
+            </summary>
+            <param name="p2"></param>
+            <param name="p4"></param>
+            <param name="extraLength">超出桩以外的长度</param>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetElementLinesForHorizontalArrangement(System.Double,System.Double)">
+            <summary>
+            横排4板2跨的算法
+            </summary>
+            <param name="skipDistance"></param>
+            <param name="remainDistance"></param>
+            <returns>如果失败，返回空的列表</returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetNecessaryPointsForHorizontalArrangement(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            获取横排4板2跨所有必要的点列表
+            </summary>
+            <param name="totalLength"></param>
+            <param name="totalHeight"></param>
+            <param name="height1"></param>
+            <param name="angle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetNecessaryPointsForVerticalArrangement(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            获取竖排2板2跨所有必要的点列表 考虑组件间距 16:02 2021/9/8 修改
+            </summary>
+            <param name="totalLength"></param>
+            <param name="length"></param>
+            <param name="panelDistanceValue"></param>
+            <param name="totalHeight"></param>
+            <param name="height1"></param>
+            <param name="angle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.GetTransverseElementsForHorizontalArrangement(Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,System.Double,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node}@)">
+            <summary>
+            获取第一个支架上构件列表
+            </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SinglePileSinglePillarAndWeldingFor42(Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,System.Double,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node}@)">
+            <summary>
+            单桩单立柱-焊接  横排4板2跨
+            </summary>
+            <param name="p0"></param>
+            <param name="p1"></param>
+            <param name="p3"></param>
+            <param name="p5"></param>
+            <param name="p6"></param>
+            <param name="p7"></param>
+            <param name="p8"></param>
+            <param name="p9"></param>
+            <param name="p10"></param>
+            <param name="p11"></param>
+            <param name="p12"></param>
+            <param name="skipDistance"></param>
+            <param name="transverseNodeLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SinglePileSinglePillarAndAnchorEarFor42(Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,System.Double,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node}@)">
+            <summary>
+            单桩单立柱-抱箍  横排4板2跨
+            </summary>
+            <param name="p0"></param>
+            <param name="p1"></param>
+            <param name="p3"></param>
+            <param name="p5"></param>
+            <param name="p6"></param>
+            <param name="p7"></param>
+            <param name="p8"></param>
+            <param name="p9"></param>
+            <param name="p10"></param>
+            <param name="p11"></param>
+            <param name="p12"></param>
+            <param name="skipDistance"></param>
+            <param name="transverseNodeLst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.SinglePileDoublePillarAndAnchorEarFor42(Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,Mrf.CSharp.BaseTools.Point3d,System.Double,System.Collections.Generic.List{Mrf.Photovoltaic.Tools.Models.Node}@)">
+            <summary>
+            单桩双立柱-抱箍  横排4板2跨
+            </summary>
+            <param name="p0"></param>
+            <param name="p1"></param>
+            <param name="p3"></param>
+            <param name="p5"></param>
+            <param name="p6"></param>
+            <param name="p7"></param>
+            <param name="p8"></param>
+            <param name="p9"></param>
+            <param name="p10"></param>
+            <param name="p11"></param>
+            <param name="p12"></param>
+            <param name="skipDistance"></param>
+            <param name="transverseNodeLst"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.FileName">
+            <summary> 
+            文件保存路径的全文件名称
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.TotalLength">
+            <summary> 
+            总长度L（单位：mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.YNumber">
+            <summary>
+            y向的光伏板个数
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.XNumber">
+            <summary>
+            x向的光伏板个数
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.SpanNumber">
+            <summary>
+            跨数n,即为支座的个数-1
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.ATotalWidth">
+            <summary>
+            竖排2板2跨总宽度A 组件长向尺寸A(mm)
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.BTotalWidth">
+            <summary>
+            横排4板2跨总宽度B(单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.InclineAngle">
+            <summary>
+            角度θ,为角度值
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.BracketType">
+            <summary>
+            支架形式
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.BoltLengthDistance">
+            <summary>
+            长向安装孔间距Sa
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.BoltWidthDistance">
+            <summary>
+            短向安装孔间距Sb
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.APanelDistanceValue">
+            <summary>
+            组件长向间距At
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.BPanelDistanceValue">
+            <summary>
+            组件短向间距At
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.PileDiameter">
+            <summary>
+            桩基直径（单位：mm）
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.TotalHeight">
+            <summary>
+            总高度H
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.Height">
+            <summary>
+            立柱支点h
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.ConstantForce">
+            <summary>
+            载荷：恒（单位：kn/m),为z负方向
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.PositiveWindForce">
+            <summary>
+            载荷：正风压（单位：kn/n）垂直于檩条向下，使用相对坐标，为正数
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.NegativeWindForce">
+            <summary>
+            载荷：负风压（单位：kn/n）垂直于檩条向上，使用相对坐标，为负数
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.SnowForce">
+            <summary>
+            载荷：雪（单位：kn/n）为z负方向
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.IsConstructionLoad">
+            <summary>
+            是否增加施工载荷
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.IsReliableStandard">
+            <summary>
+            是否执行新可靠度标准
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.PurlinSectionType">
+            <summary>
+            檩条截面类型,默认冷弯卷边槽钢
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.BeamSectionType">
+            <summary>
+            斜梁截面类型,默认冷弯卷边槽钢
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.PillarSectionType">
+            <summary>
+            立柱截面类型,默认热轧无缝钢管与电焊钢管
+            </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.FrontBraceSectionType">
+             <summary>
+            前斜撑截面类型,默认冷弯C型钢
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.BackBraceSectionType">
+             <summary>
+            后斜撑截面类型,默认冷弯C型钢
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.PurlinSectionMaterial">
+             <summary>
+            檩条截面材料属性 默认Q235
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.BeamSectionMaterial">
+             <summary>
+            斜梁截面材料属性 默认Q235
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.PillarSectionMaterial">
+             <summary>
+            立柱截面材料属性 默认Q235
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.FrontBraceSectionMaterial">
+             <summary>
+            前斜撑截面材料属性 默认Q235
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.BackBraceSectionMaterial">
+             <summary>
+            后斜撑截面材料属性 默认Q235
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.MinThickness1Lst">
+             <summary>
+            第一种最小厚度列表
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.MinThickness2Lst">
+             <summary>
+            第二种最小厚度列表
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.PurlinMinThickness">
+             <summary>
+            檩条最小厚度（单位：mm）
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.BeamMinThickness">
+             <summary>
+            斜梁最小厚度（单位：mm）
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.PillarMinThickness">
+             <summary>
+            立柱最小厚度（单位：mm）
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.FrontBraceMinThickness">
+             <summary>
+            前斜撑最小厚度（单位：mm）
+             </summary>
+        </member>
+        <member name="P:Mrf.Photovoltaic.Tools._3D3SModel.BackBraceMinThickness">
+             <summary>
+            斜梁最小厚度（单位：mm）
+             </summary>
+        </member>
+        <member name="M:Mrf.Photovoltaic.Tools._3D3SModel.AdjustValue(System.Double,System.Collections.Generic.List{System.Double},System.Double)">
+            <summary>
+            判断数是否属于列表范围内的值，如果不是，取中间的值
+            </summary>
+            <param name="value"></param>
+            <param name="valueLst"></param>
+            <param name="tolerance"></param>
+        </member>
+    </members>
+</doc>
