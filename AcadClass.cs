@@ -296,6 +296,12 @@ namespace AcadModule
             List<List<Point3d>> pList = AcadFunc.GetLinePointList(list, height);
             double tolerance = 20;
             List<ObjectId> idList = AcadFunc.CreatePolylines(pList, tolerance);
+            //AcadFunc.CreateScalePolylines(idList);
+
+
         }
+
+
+
     }
 }

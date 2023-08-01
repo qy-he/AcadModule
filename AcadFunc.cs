@@ -157,99 +157,121 @@ namespace AcadModule
                 TriangleLine.AddVertexAt(0, Trianglep3, 0, 0, 0);
                 TriangleLine.Closed = true;
                 ObjectId TriangleId = db.AddToModelSpace(TriangleLine);
-                int count = 1;
 
-                if (rowCount > 1)
+                Point3d basePoint = new Point3d(xMinPoint, yMinPoint, 0);
+                List<Point3d> list = GetLinePosition(basePoint, columnCount, rowCount, columnWidth, rowHeight, cSpacing, rSpacing);
+                if (list.Count > 0)
                 {
                     Polyline pLine = new Polyline();
-                    Point2d p1 = Trianglep1;
-                    double xLinePt = xMinPoint + (columnWidth * columnCount) + (cSpacing * (columnCount - 1)) - (columnWidth / 2);
-                    Point2d p2 = new Point2d(xLinePt, yPoint);
-                    double xlinePoint3 = xMinPoint + (columnWidth * columnCount) + (cSpacing * (columnCount - 1)) - (columnWidth / 2);
-                    double ylinePoint3 = yMinPoint + (rowHeight / 2);
-                    Point2d p3 = new Point2d(xlinePoint3, ylinePoint3);
-                    double xlinePoint4 = xMinPoint + (columnWidth / 2);
-                    double ylinePoint4 = yMinPoint + (rowHeight / 2);
-                    Point2d p4 = new Point2d(xlinePoint4, ylinePoint4);
-                    pLine.AddVertexAt(0, p1, 0, 0, 0);
-                    pLine.AddVertexAt(0, p2, 0, 0, 0);
-                    pLine.AddVertexAt(0, p3, 0, 0, 0);
-                    pLine.AddVertexAt(0, p4, 0, 0, 0);
+                    foreach (var item in list)
+                    {
+                        Point2d pt = new Point2d(item.X, item.Y);
+                        pLine.AddVertexAt(0, pt, 0, 0, 0);
+                    }
                     pLine.Closed = false;
                     db.AddToModelSpace(pLine);
-
-                    for (int j = 0; j < columnCount; j++)
-                    {
-                        DBText textFirst = new DBText();
-                        double txPoint = xMinPoint + (columnWidth / 8) + (columnWidth * j) + (cSpacing * j);
-                        double tyPoint = yMinPoint + (rowHeight / 8) + rowHeight  + rSpacing;
-                        textFirst.Position = new Point3d(txPoint, tyPoint, 0);
-                        if (count > 9)
-                        {
-                            textFirst.TextString = count.ToString();
-                        }
-                        else
-                        {
-                            textFirst.TextString = "0" + count;
-                        }
-                        textFirst.HorizontalMode = TextHorizontalMode.TextLeft;
-                        textFirst.Height = (rowHeight / 8);
-                        db.AddToModelSpace(textFirst);
-                        count++;
-                    }
-                    for (int j = columnCount; j > 0; j--)
-                    {
-                        DBText textFirst = new DBText();
-                        double txPoint = xMinPoint + (columnWidth / 8) + (columnWidth * (j - 1)) + (cSpacing * (j - 1));
-                        double tyPoint = yMinPoint + (rowHeight / 8);
-                        textFirst.Position = new Point3d(txPoint, tyPoint, 0);
-                        if (count > 9)
-                        {
-                            textFirst.TextString = count.ToString();
-                        }
-                        else
-                        {
-                            textFirst.TextString = "0" + count;
-                        }
-                        textFirst.HorizontalMode = TextHorizontalMode.TextLeft;
-                        textFirst.Height = (rowHeight / 8);
-                        db.AddToModelSpace(textFirst);
-                        count++;
-                    }
                 }
-                else
+
+                Dictionary<string, Point3d> textdict = GetTextPosition(basePoint, columnCount, rowCount, columnWidth, rowHeight, cSpacing, rSpacing);
+                if (textdict.Count() > 0)
                 {
-                    Polyline pLine = new Polyline();
-                    Point2d p1 = Trianglep1;
-                    double xLinePt = xMinPoint + (columnWidth * columnCount) + (cSpacing * (columnCount - 1)) - (columnWidth / 2);
-                    Point2d p2 = new Point2d(xLinePt, yPoint);
-                    pLine.AddVertexAt(0, p1, 0, 0, 0);
-                    pLine.AddVertexAt(0, p2, 0, 0, 0);
-                    pLine.Closed = false;
-                    db.AddToModelSpace(pLine);
-                    for (int i = 0; i < columnCount; i++)
+                    foreach (var item in textdict)
                     {
                         DBText textFirst = new DBText();
-                        double txPoint = xMinPoint + (columnWidth / 8) + (columnWidth * i) + (cSpacing * i);
-                        double tyPoint = yMinPoint + (rowHeight / 8);
-                        textFirst.Position = new Point3d(txPoint, tyPoint, 0);
-                        if (count > 9)
-                        {
-                            textFirst.TextString = count.ToString();
-                        }
-                        else
-                        {
-                            textFirst.TextString = "0" + count;
-                        }
+                        textFirst.Position = new Point3d(item.Value.X, item.Value.Y, 0);
+                        textFirst.TextString = item.Key;
                         textFirst.HorizontalMode = TextHorizontalMode.TextLeft;
                         textFirst.Height = (rowHeight / 8);
                         db.AddToModelSpace(textFirst);
-                        count++;
                     }
                 }
                 tx.Commit();
             }
         }
+
+        /// <summary>
+        /// 获取文字坐标
+        /// </summary>
+        /// <param name="basePoint">基点</param>
+        /// <param name="columnCount">列数</param>
+        /// <param name="rowCount">行数</param>
+        /// <param name="columnWidth">列宽</param>
+        /// <param name="rowHeight">行宽</param>
+        /// <param name="cSpacing">列间距</param>
+        /// <param name="rSpacing">行间距</param>
+        /// <returns></returns>
+        public static Dictionary<string,Point3d> GetTextPosition(Point3d basePoint,int columnCount,int rowCount, int columnWidth,int rowHeight, int cSpacing,int rSpacing)
+        {
+            Dictionary<string, Point3d> dict = new Dictionary<string, Point3d>();
+            if (rowCount > 1)
+            {
+                int count = 1;
+                for (int i = 0; i < columnCount; i++)
+                {
+                    double txPoint = basePoint.X + (columnWidth / 8) + (columnWidth * i) + (cSpacing * i);
+                    double tyPoint = basePoint.Y + (rowHeight / 8) + rowHeight + rSpacing;
+                    string key = count.ToString().PadLeft(2, '0');
+                    Point3d pt = new Point3d(txPoint, tyPoint, 0);
+                    dict.Add(key, pt);
+                    count++;
+                }
+                for (int j = columnCount; j > 0; j--)
+                {
+                    double txPoint = basePoint.X + (columnWidth / 8) + (columnWidth * (j - 1)) + (cSpacing * (j - 1));
+                    double tyPoint = basePoint.Y + (rowHeight / 8);
+                    string key = count.ToString().PadLeft(2, '0');
+                    Point3d pt = new Point3d(txPoint, tyPoint, 0);
+                    dict.Add(key, pt);
+                    count++;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < columnCount; i++)
+                {
+                    double txPoint = basePoint.X + (columnWidth / 8) + (columnWidth * i) + (cSpacing * i);
+                    double tyPoint = basePoint.Y + (rowHeight / 8);
+                    string key = i.ToString().PadLeft(2, '0');
+                    Point3d pt = new Point3d(txPoint, tyPoint, 0);
+                    dict.Add(key, pt);
+                }
+            }
+            return dict;
+        }
+
+        /// <summary>
+        /// 获取多段线点坐标
+        /// </summary>
+        /// <param name="basePoint"></param>
+        /// <param name="columnCount"></param>
+        /// <param name="rowCount"></param>
+        /// <param name="columnWidth"></param>
+        /// <param name="rowHeight"></param>
+        /// <param name="cSpacing"></param>
+        /// <param name="rSpacing"></param>
+        /// <returns></returns>
+        public static List<Point3d> GetLinePosition(Point3d basePoint, int columnCount, int rowCount, int columnWidth, int rowHeight, int cSpacing, int rSpacing)
+        {
+            List<Point3d> list = new List<Point3d>();
+            double linexPoint = basePoint.X + (columnWidth / 4);
+            double lineyPoint = basePoint.Y + (rowHeight * rowCount) + (rSpacing * (rowCount - 1) - (rowHeight / 2));
+            Point3d pt = new Point3d(linexPoint, lineyPoint, 0);
+            list.Add(pt);
+            linexPoint = basePoint.X + (columnWidth * columnCount) + (cSpacing * (columnCount - 1)) - (columnWidth / 2);
+            pt = new Point3d(linexPoint, lineyPoint, 0);
+            list.Add(pt);
+            if (rowCount > 1)
+            {
+                lineyPoint = basePoint.Y + (rowHeight / 2);
+                pt = new Point3d(linexPoint, lineyPoint, 0);
+                list.Add(pt);
+                linexPoint = basePoint.X + (columnWidth / 2);
+                pt = new Point3d(linexPoint, lineyPoint, 0);
+                list.Add(pt);
+            }
+            return list;
+        }
+
 
         public static List<ObjectId> CreatePolylines(List<List<Point3d>> pList, double tolerance)
         {
@@ -279,6 +301,20 @@ namespace AcadModule
             }
             return lineList;
         }
+
+        public static void CreateScalePolylines(List<ObjectId> idList,double basePoint,double maxHeight)
+        {
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Database db = doc.Database;
+            using (Transaction tx = db.TransactionManager.StartTransaction())
+            {
+                foreach (var item in idList)
+                {
+
+                }
+            }
+        }
+
 
         public static List<List<Point3d>> GetLinePointList(List<Point3d> list, double height)
         {
