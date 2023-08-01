@@ -272,7 +272,12 @@ namespace AcadModule
             return list;
         }
 
-
+        /// <summary>
+        /// 创建多段线，并偏移一定距离
+        /// </summary>
+        /// <param name="pList"></param>
+        /// <param name="tolerance"></param>
+        /// <returns></returns>
         public static List<ObjectId> CreatePolylines(List<List<Point3d>> pList, double tolerance)
         {
             List<ObjectId> lineList = new List<ObjectId>();
@@ -302,20 +307,107 @@ namespace AcadModule
             return lineList;
         }
 
-        public static void CreateScalePolylines(List<ObjectId> idList,double basePoint,double maxHeight)
+        /// <summary>
+        /// 创建缩放后的多段线
+        /// </summary>
+        /// <param name="lpList"></param>
+        /// <param name="list"></param>
+        /// <param name="basePoint"></param>
+        /// <param name="maxHeight"></param>
+        /// <param name="tolerance"></param>
+        public static void CreateScalePolylines(List<List<Point3d>> lpList, Point3d basePoint,double maxHeight,double tolerance)
         {
             Document doc = Application.DocumentManager.MdiActiveDocument;
             Database db = doc.Database;
             using (Transaction tx = db.TransactionManager.StartTransaction())
             {
-                foreach (var item in idList)
+                PointTool pTool = new PointTool();
+                double scale = GetScaling(lpList, maxHeight, pTool);
+                foreach (var pList in lpList)
                 {
-
+                    List<Point3d> newList = pTool.GetNewBoundingBox(pList, tolerance);
+                    if (newList != null)
+                    {
+                        Polyline pLine = new Polyline();
+                        foreach (var item in newList)
+                        {
+                            Point2d pt = new Point2d(item.X, item.Y);
+                            pLine.AddVertexAt(0, pt, 0, 0, 0);
+                        }
+                        pLine.Closed = true;
+                        EntTools.Scale(pLine, basePoint, scale);
+                        ObjectId objectId = db.AddToModelSpace(pLine);
+                    }
                 }
+
+                Dictionary<string, Point3d> textdict = GetTextPosition(lpList, pTool);
+                foreach (var item in textdict)
+                {
+                    DBText textFirst = new DBText();
+                    textFirst.Position = item.Value;
+                    textFirst.TextString = item.Key;
+                    textFirst.HorizontalMode = TextHorizontalMode.TextLeft;
+                    textFirst.Height = 20;
+                    textFirst.Scale(basePoint, scale);
+                    db.AddToModelSpace(textFirst);
+                }
+                tx.Commit();
             }
         }
 
+        private static Dictionary<string, Point3d> GetTextPosition(List<List<Point3d>> lpList, PointTool pTool)
+        {
+            Dictionary<double, Point3d> dictPoint = new Dictionary<double, Point3d>();
+            Dictionary<string, Point3d> textdict = new Dictionary<string, Point3d>();
+            foreach (var pList in lpList)
+            {
+                Point3d maxPt = pTool.GetMaxPoint(pList);
+                Point3d minPt = pTool.GetMinPoint(pList);
+                dictPoint.Add(maxPt.Y, minPt);
+            }
+            dictPoint.OrderByDescending(x => x.Key);
+            int count = 1;
+            foreach (var item in dictPoint)
+            {
+                string key = count + "区";
+                Point3d pt = new Point3d(item.Value.X, item.Value.Y, 0);
+                textdict.Add(key, pt);
+                count++;
+            }
+            return textdict;
+        }
 
+        /// <summary>
+        /// 获取缩放比例
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="maxHeight"></param>
+        /// <param name="pTool"></param>
+        /// <returns></returns>
+        private static double GetScaling(List<List<Point3d>> lplist, double maxHeight, PointTool pTool)
+        {
+            List<Point3d> ptlist = new List<Point3d>();
+            Point3d maxPt;
+            Point3d minPt;
+            foreach (var list in lplist)
+            {
+                maxPt = pTool.GetMaxPoint(list);
+                minPt = pTool.GetMinPoint(list);
+                ptlist.Add(maxPt);
+                ptlist.Add(minPt);
+            }
+            maxPt = pTool.GetMaxPoint(ptlist);
+            minPt = pTool.GetMinPoint(ptlist);
+            double maxheight = maxPt.Y - minPt.Y;
+            return maxHeight / maxheight;
+        }
+
+        /// <summary>
+        /// 获取最大范围内的坐标点
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public static List<List<Point3d>> GetLinePointList(List<Point3d> list, double height)
         {
             List<List<Point3d>> pLists = new List<List<Point3d>>();
