@@ -1,9 +1,12 @@
 ﻿using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
+using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Geometry;
+using Autodesk.AutoCAD.PlottingServices;
 using DotNetARX;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -307,6 +310,8 @@ namespace AcadModule
             return lineList;
         }
 
+
+
         /// <summary>
         /// 创建缩放后的多段线
         /// </summary>
@@ -449,6 +454,100 @@ namespace AcadModule
                 tx.Commit();
             }
             return pLists;
+        }
+
+        /// <summary>
+        /// 设置视图范围
+        /// </summary>
+        /// <param name="spaceId"></param>
+        /// <param name="minPoint"></param>
+        /// <param name="maxPoint"></param>
+        public static void SetLayoutRange(ObjectId spaceId,string device, Point3d minPoint, Point3d maxPoint)
+        {
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Database db = doc.Database;
+            Editor ed = doc.Editor;
+            using (Transaction tx = db.TransactionManager.StartTransaction())
+            {
+                LayoutManager layoutMgr = LayoutManager.Current;
+                Layout aclayout = tx.GetObject(layoutMgr.GetLayoutId(layoutMgr.CurrentLayout), OpenMode.ForWrite) as Layout;
+                PlotSettingsValidator psv = PlotSettingsValidator.Current;
+                StringCollection devlist = psv.GetPlotDeviceList();
+                double pageWidth = maxPoint.Y - minPoint.Y;
+                double pageHeight = maxPoint.X - minPoint.X;
+                setClosestMediaName(psv, device, aclayout, pageWidth, pageHeight, PlotPaperUnit.Millimeters, true);
+                ed.Regen();
+                tx.Commit();
+            }
+        }
+
+        private static void setClosestMediaName(PlotSettingsValidator psv, string device, Layout aclayout, double pageWidth, double pageHeight, PlotPaperUnit units, bool matchPrintableArea)
+        {
+            psv.SetPlotType(aclayout,Autodesk.AutoCAD.DatabaseServices.PlotType.Extents);
+            psv.SetPlotPaperUnits(aclayout, units);
+            psv.SetUseStandardScale(aclayout, false);
+            psv.SetStdScaleType(aclayout, StdScaleType.ScaleToFit);
+            psv.SetPlotConfigurationName(aclayout, device, null);
+            psv.RefreshLists(aclayout);
+
+            StringCollection mediaList = psv.GetCanonicalMediaNameList(aclayout);
+
+            double smallestOffset = 0.0;
+            string selectedMedia = string.Empty;
+            PlotRotation selectedRot = PlotRotation.Degrees000;
+
+            foreach (string media in mediaList)
+            {
+                psv.SetCanonicalMediaName(aclayout, media);
+                psv.SetPlotPaperUnits(aclayout, units);
+
+                double mediaPageWidth = aclayout.PlotPaperSize.X;
+                double mediaPageHeight = aclayout.PlotPaperSize.Y;
+
+                if (matchPrintableArea)
+                {
+                    mediaPageWidth -=
+                        (aclayout.PlotPaperMargins.MinPoint.X +
+                         aclayout.PlotPaperMargins.MaxPoint.X);
+
+                    mediaPageHeight -=
+                        (aclayout.PlotPaperMargins.MinPoint.Y +
+                         aclayout.PlotPaperMargins.MaxPoint.Y);
+                }
+
+                PlotRotation rotationType = PlotRotation.Degrees090;
+
+                //Check that we are not outside the media print area
+                if (mediaPageWidth < pageWidth ||
+                   mediaPageHeight < pageHeight)
+                {
+                    //Check if 90°Rot will fit, otherwise check next media
+                    if (mediaPageHeight < pageWidth ||
+                       mediaPageWidth >= pageHeight)
+                    {
+                        //Too small, let's check next media
+                        continue;
+                    }
+                    //That's ok 90°Rot will fit
+                    rotationType = PlotRotation.Degrees090;
+                }
+                double offset = Math.Abs(
+                    mediaPageWidth * mediaPageHeight -
+                    pageWidth * pageHeight);
+
+                if (selectedMedia == string.Empty || offset < smallestOffset)
+                {
+                    selectedMedia = media;
+                    smallestOffset = offset;
+                    selectedRot = rotationType;
+
+                    //Found perfect match so we can quit early
+                    if (smallestOffset == 0)
+                        break;
+                }
+            }
+            psv.SetCanonicalMediaName(aclayout, selectedMedia);
+            psv.SetPlotRotation(aclayout, selectedRot);
         }
     }
 }

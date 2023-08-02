@@ -300,7 +300,15 @@ namespace AcadModule
             AcadFunc.CreateScalePolylines(pList, basePoint, 80, tolerance);
         }
 
-
+        [CommandMethod("AcsLayout")]
+        public void AcsLayout()
+        {
+            ObjectId spaceId = ObjectId.Null;
+            string device = "acs_pdf.pc3";//绘图仪
+            Point3d minPoint = new Point3d(0, 0, 0);
+            Point3d maxPoint = new Point3d(841, 594, 0);
+            AcadFunc.SetLayoutRange(spaceId, device, minPoint, maxPoint);
+        }
 
     }
 }
