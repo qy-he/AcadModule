@@ -307,8 +307,17 @@ namespace AcadModule
             string device = "acs_pdf.pc3";//绘图仪
             Point3d minPoint = new Point3d(0, 0, 0);
             Point3d maxPoint = new Point3d(841, 594, 0);
-            AcadFunc.SetLayoutRange(spaceId, device, minPoint, maxPoint);
+            AcadFunc.SetLayoutRange(spaceId, minPoint, maxPoint);
         }
 
+        [CommandMethod("AcsTable")]
+        public void AcsTable()
+        {
+            ObjectId tbId = ObjectId.Null;
+            int rowindex = 2;
+            int columnindex = 4;
+            string blockName = "测试";
+            bool isTrue = AcadFunc.CreateTbBlock(tbId, rowindex, columnindex, blockName);
+        }
     }
 }

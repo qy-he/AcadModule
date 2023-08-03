@@ -7,6 +7,7 @@ using DotNetARX;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -462,7 +463,7 @@ namespace AcadModule
         /// <param name="spaceId"></param>
         /// <param name="minPoint"></param>
         /// <param name="maxPoint"></param>
-        public static void SetLayoutRange(ObjectId spaceId,string device, Point3d minPoint, Point3d maxPoint)
+        public static bool SetLayoutRange(ObjectId spaceId, Point3d minPoint, Point3d maxPoint, string device = "")
         {
             Document doc = Application.DocumentManager.MdiActiveDocument;
             Database db = doc.Database;
@@ -473,81 +474,161 @@ namespace AcadModule
                 Layout aclayout = tx.GetObject(layoutMgr.GetLayoutId(layoutMgr.CurrentLayout), OpenMode.ForWrite) as Layout;
                 PlotSettingsValidator psv = PlotSettingsValidator.Current;
                 StringCollection devlist = psv.GetPlotDeviceList();
+                if (string.IsNullOrEmpty(device))
+                {
+                    if (devlist.Count > 0)
+                    {
+                        device = devlist[1];
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
                 double pageWidth = maxPoint.Y - minPoint.Y;
                 double pageHeight = maxPoint.X - minPoint.X;
+
+
                 setClosestMediaName(psv, device, aclayout, pageWidth, pageHeight, PlotPaperUnit.Millimeters, true);
                 ed.Regen();
                 tx.Commit();
             }
+            return true;
         }
 
         private static void setClosestMediaName(PlotSettingsValidator psv, string device, Layout aclayout, double pageWidth, double pageHeight, PlotPaperUnit units, bool matchPrintableArea)
         {
-            psv.SetPlotType(aclayout,Autodesk.AutoCAD.DatabaseServices.PlotType.Extents);
-            psv.SetPlotPaperUnits(aclayout, units);
-            psv.SetUseStandardScale(aclayout, false);
-            psv.SetStdScaleType(aclayout, StdScaleType.ScaleToFit);
-            psv.SetPlotConfigurationName(aclayout, device, null);
-            psv.RefreshLists(aclayout);
-
-            StringCollection mediaList = psv.GetCanonicalMediaNameList(aclayout);
-
-            double smallestOffset = 0.0;
-            string selectedMedia = string.Empty;
-            PlotRotation selectedRot = PlotRotation.Degrees000;
-
-            foreach (string media in mediaList)
+            try
             {
-                psv.SetCanonicalMediaName(aclayout, media);
+                string medias = "ISO full bleed A1 (841.00 x 594.00 毫米)";
+                psv.SetPlotType(aclayout, Autodesk.AutoCAD.DatabaseServices.PlotType.Extents);
                 psv.SetPlotPaperUnits(aclayout, units);
+                psv.SetUseStandardScale(aclayout, false);
+                psv.SetStdScaleType(aclayout, StdScaleType.ScaleToFit);
+                psv.SetPlotConfigurationName(aclayout, device, medias);
+                psv.RefreshLists(aclayout);
+                psv.SetCanonicalMediaName(aclayout, medias);
+                PlotRotation selectedRot = PlotRotation.Degrees000;
 
-                double mediaPageWidth = aclayout.PlotPaperSize.X;
-                double mediaPageHeight = aclayout.PlotPaperSize.Y;
 
-                if (matchPrintableArea)
+                StringCollection mediaList = psv.GetCanonicalMediaNameList(aclayout);
+
+                double smallestOffset = 0.0;
+                string selectedMedia = string.Empty;
+
+                foreach (string media in mediaList)
                 {
-                    mediaPageWidth -=
-                        (aclayout.PlotPaperMargins.MinPoint.X +
-                         aclayout.PlotPaperMargins.MaxPoint.X);
+                    psv.SetCanonicalMediaName(aclayout, media);
+                    psv.SetPlotPaperUnits(aclayout, units);
 
-                    mediaPageHeight -=
-                        (aclayout.PlotPaperMargins.MinPoint.Y +
-                         aclayout.PlotPaperMargins.MaxPoint.Y);
-                }
+                    double mediaPageWidth = aclayout.PlotPaperSize.X;
+                    double mediaPageHeight = aclayout.PlotPaperSize.Y;
 
-                PlotRotation rotationType = PlotRotation.Degrees090;
-
-                //Check that we are not outside the media print area
-                if (mediaPageWidth < pageWidth ||
-                   mediaPageHeight < pageHeight)
-                {
-                    //Check if 90°Rot will fit, otherwise check next media
-                    if (mediaPageHeight < pageWidth ||
-                       mediaPageWidth >= pageHeight)
+                    if (matchPrintableArea)
                     {
-                        //Too small, let's check next media
-                        continue;
+                        mediaPageWidth -=
+                            (aclayout.PlotPaperMargins.MinPoint.X +
+                             aclayout.PlotPaperMargins.MaxPoint.X);
+
+                        mediaPageHeight -=
+                            (aclayout.PlotPaperMargins.MinPoint.Y +
+                             aclayout.PlotPaperMargins.MaxPoint.Y);
                     }
-                    //That's ok 90°Rot will fit
-                    rotationType = PlotRotation.Degrees090;
-                }
-                double offset = Math.Abs(
-                    mediaPageWidth * mediaPageHeight -
-                    pageWidth * pageHeight);
 
-                if (selectedMedia == string.Empty || offset < smallestOffset)
-                {
-                    selectedMedia = media;
-                    smallestOffset = offset;
-                    selectedRot = rotationType;
+                    PlotRotation rotationType = PlotRotation.Degrees090;
 
-                    //Found perfect match so we can quit early
-                    if (smallestOffset == 0)
-                        break;
+                    //Check that we are not outside the media print area
+                    if (mediaPageWidth < pageWidth ||
+                       mediaPageHeight < pageHeight)
+                    {
+                        //Check if 90°Rot will fit, otherwise check next media
+                        if (mediaPageHeight < pageWidth ||
+                           mediaPageWidth >= pageHeight)
+                        {
+                            //Too small, let's check next media
+                            continue;
+                        }
+                        //That's ok 90°Rot will fit
+                        rotationType = PlotRotation.Degrees090;
+                    }
+                    double offset = Math.Abs(
+                        mediaPageWidth * mediaPageHeight -
+                        pageWidth * pageHeight);
+
+                    if (selectedMedia == string.Empty || offset < smallestOffset)
+                    {
+                        selectedMedia = media;
+                        smallestOffset = offset;
+                        selectedRot = rotationType;
+
+                        //Found perfect match so we can quit early
+                        if (smallestOffset == 0)
+                            break;
+                    }
                 }
+                psv.SetCanonicalMediaName(aclayout, selectedMedia);
+                psv.SetPlotRotation(aclayout, selectedRot);
             }
-            psv.SetCanonicalMediaName(aclayout, selectedMedia);
-            psv.SetPlotRotation(aclayout, selectedRot);
+            catch (Exception e)
+            {
+            }
+        }
+
+        /// <summary>
+        /// 在指定表单中插入块
+        /// </summary>
+        /// <param name="tbId">表单Id</param>
+        /// <param name="rowindex">行</param>
+        /// <param name="columnindex">列</param>
+        /// <param name="blockName">块名</param>
+        /// <returns></returns>
+        public static bool CreateTbBlock(ObjectId tbId, int rowindex, int columnindex, string blockName)
+        {
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Database db = doc.Database;
+            using(Transaction tx = db.TransactionManager.StartTransaction())
+            {
+                BlockTable bt = (BlockTable)tx.GetObject(db.BlockTableId,OpenMode.ForRead);
+                BlockTableRecord btr = tx.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
+                ObjectId blkId = ObjectId.Null;
+                foreach (ObjectId btobjid in bt)
+                {
+                    if (btobjid.IsEffectivelyErased) continue;
+                    BlockTableRecord blkrd = tx.GetObject(btobjid, OpenMode.ForRead) as BlockTableRecord;
+                    if (blkrd.Name == blockName)
+                    {
+                        blkId = btobjid;
+                        break;
+                    }
+                }
+                if (blkId.IsNull)
+                {
+                    return false;
+                }
+                Entity entity = tx.GetObject(tbId, OpenMode.ForWrite) as Entity;
+                if (entity is Table)
+                {
+                    Table tb = entity as Table;
+                    if (tb.Rows.Count > rowindex && tb.Columns.Count > columnindex)
+                    {
+                        if (tb.Cells[rowindex, columnindex].Contents.Count > 0)
+                        {
+                            tb.Cells[rowindex, columnindex].Contents[0].BlockTableRecordId = blkId;
+                        }
+                        else
+                        {
+                            tb.Cells[rowindex, columnindex].Contents.Add();
+                            tb.Cells[rowindex, columnindex].Contents[0].BlockTableRecordId = blkId;
+                        }
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+                tx.Commit();
+            }
+            return true;
         }
     }
 }
