@@ -500,19 +500,20 @@ namespace AcadModule
         {
             try
             {
-                string medias = "ISO full bleed A1 (841.00 x 594.00 毫米)";
                 psv.SetPlotType(aclayout, Autodesk.AutoCAD.DatabaseServices.PlotType.Extents);
                 psv.SetPlotPaperUnits(aclayout, units);
                 psv.SetUseStandardScale(aclayout, false);
                 psv.SetStdScaleType(aclayout, StdScaleType.ScaleToFit);
-                psv.SetPlotConfigurationName(aclayout, device, medias);
+                psv.SetPlotConfigurationName(aclayout, device, null);
                 psv.RefreshLists(aclayout);
-                psv.SetCanonicalMediaName(aclayout, medias);
-                PlotRotation selectedRot = PlotRotation.Degrees000;
-
+                //psv.SetClosestMediaName(aclayout, pageWidth, pageHeight, PlotPaperUnit.Millimeters, true);
+                //psv.SetCanonicalMediaName(aclayout, medias);
+                PlotRotation selectedRot = PlotRotation.Degrees090;
+                psv.SetPlotRotation(aclayout, selectedRot);
 
                 StringCollection mediaList = psv.GetCanonicalMediaNameList(aclayout);
-
+                string medias = "ISO full bleed A1 (841.00 x 594.00 毫米)";
+                mediaList.Add(medias);
                 double smallestOffset = 0.0;
                 string selectedMedia = string.Empty;
 

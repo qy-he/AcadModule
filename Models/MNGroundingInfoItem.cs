@@ -4,40 +4,40 @@ using System.Collections.Generic;
 namespace Mrf.Photovoltaic.Tools.Models
 {
  
-        public class MNGroundingInfoItem
-        {
-            /// <summary>
-            /// 
-            /// </summary>
-            public string Mode { get; set; }
-            /// <summary>
-            /// 
-            /// </summary>
-            public string Label { get; set; }
+    public class MNGroundingInfoItem
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Mode { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Label { get; set; }
         /// <summary>
         /// Revit中的Id
         /// </summary>
         public int Revit_Id { get; set; }
-            /// <summary>
-            /// 扁钢
-            /// </summary>
-            public string Model { get; set; }
-            /// <summary>
-            /// 铜
-            /// </summary>
-            public string Material { get; set; }
-            /// <summary>
-            /// 
-            /// </summary>
-            public string Specification { get; set; }
-            /// <summary>
-            /// 
-            /// </summary>
-            public double Depth { get; set; }
-            /// <summary>
-            /// 
-            /// </summary>
-            public double Length { get; set; }
+        /// <summary>
+        /// 扁钢
+        /// </summary>
+        public string Model { get; set; }
+        /// <summary>
+        /// 铜
+        /// </summary>
+        public string Material { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Specification { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public double Depth { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public double Length { get; set; }
 
 
 
@@ -91,6 +91,4 @@ namespace Mrf.Photovoltaic.Tools.Models
         }
 
     }
-
-
 }
