@@ -319,5 +319,20 @@ namespace AcadModule
             string blockName = "测试";
             bool isTrue = AcadFunc.CreateTbBlock(tbId, rowindex, columnindex, blockName);
         }
+
+
+        [CommandMethod("AcsClearAllAttributes")]
+        public void AcsClearAllAttributes()
+        {
+            ObjectId blockId = ObjectId.Null;
+            bool isTrue = AcadFunc.ClearAllAttributes(blockId);
+        }
+
+
+        [CommandMethod("AcsSolarPanel")]
+        public void AcsSolarPanel()
+        {
+            AcadFunc.CreateSolarPanel();
+        }
     }
 }

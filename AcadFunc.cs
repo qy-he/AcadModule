@@ -312,6 +312,74 @@ namespace AcadModule
         }
 
 
+        /// <summary>
+        /// 清除所有属性
+        /// </summary>
+        /// <param name="blockId"></param>
+        /// <returns></returns>
+        internal static bool ClearAllAttributes(ObjectId blockId)
+        {
+            bool isClear = true;
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            //Editor ed = doc.Editor;
+            Database db = doc.Database;
+            //PromptNestedEntityOptions pneo = new PromptNestedEntityOptions("\nSelect attribute to erase");
+            using (Transaction tr = db.TransactionManager.StartTransaction())
+            {
+                try
+                {
+                    //ObjectId arId;
+                    //while (true)
+                    //{
+                    //    PromptEntityResult per = ed.GetNestedEntity(pneo);
+                    //    if (per.Status != PromptStatus.OK) return false;
+                    //    arId = per.ObjectId;
+                    //    if (tr.GetObject(arId, OpenMode.ForRead).GetType() == typeof(AttributeReference))
+                    //        break;
+                    //    ed.WriteMessage("\nNot an AttributeReference");
+                    //    break;
+                    //}
+                    //AttributeReference ar = (AttributeReference)tr.GetObject(arId, OpenMode.ForWrite);
+
+
+                    //BlockReference br = (BlockReference)tr.GetObject(ar.OwnerId, OpenMode.ForRead);
+                    //BlockTableRecord btr = (BlockTableRecord)tr.GetObject(br.BlockTableRecord, OpenMode.ForWrite);
+                    BlockTableRecord btr = blockId.GetObject(OpenMode.ForWrite) as BlockTableRecord;
+                    foreach (ObjectId id in btr)
+                    {
+                        AttributeDefinition ad = tr.GetObject(id, OpenMode.ForRead) as AttributeDefinition;
+                        if (ad == null)
+                            continue;
+                        //if (ad.Tag != ar.Tag)
+                        //    continue;
+                        ad.UpgradeOpen();
+                        ad.Erase();
+                    }
+
+                    foreach (ObjectId id in btr.GetBlockReferenceIds(true, true))
+                    {
+                        BlockReference br = (BlockReference)tr.GetObject(id, OpenMode.ForWrite);
+                        if (br != null)
+                        {
+                            foreach (ObjectId attId in br.AttributeCollection)
+                            {
+                                AttributeReference attref = attId.GetObject(OpenMode.ForRead) as AttributeReference;
+                                attref.UpgradeOpen();
+                                attref.Erase();
+                            }
+                        }
+                    }
+                    tr.Commit();
+                }
+                catch (Exception e)
+                {
+                    isClear = false;
+                }
+            }
+            return isClear;
+        }
+
+
 
         /// <summary>
         /// 创建缩放后的多段线
@@ -339,6 +407,7 @@ namespace AcadModule
                         {
                             Point2d pt = new Point2d(item.X, item.Y);
                             pLine.AddVertexAt(0, pt, 0, 0, 0);
+                            
                         }
                         pLine.Closed = true;
                         EntTools.Scale(pLine, basePoint, scale);
@@ -613,5 +682,91 @@ namespace AcadModule
             }
             return true;
         }
+
+
+
+        public static void CreateSolarPanel()
+        {
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Database db = doc.Database;
+            using (Transaction tx = db.TransactionManager.StartTransaction())
+            {
+                Dictionary<int,Point3d> pdict = new Dictionary<int, Point3d>();
+                pdict.Add(1,new Point3d(-600.00, 387.61, 206.10));
+                pdict.Add(2,new Point3d(1000.00, 387.61, 206.10));
+                pdict.Add(3,new Point3d(5000.00, 387.61, 206.10));
+                pdict.Add(4,new Point3d(9000.00, 387.61, 206.10));
+                pdict.Add(5,new Point3d(13000.00, 387.61, 206.10));
+                pdict.Add(6,new Point3d(14600.00, 387.61, 206.10));
+                pdict.Add(7,new Point3d(-600.00, 1623.74, 863.36));
+                pdict.Add(8,new Point3d(1000.00, 1623.74, 863.36));
+                pdict.Add(9, new Point3d(5000.00, 1623.74, 863.36));
+                pdict.Add(10, new Point3d(9000.00, 1623.74, 863.36));
+                pdict.Add(11, new Point3d(13000.00, 1623.74, 863.36));
+                pdict.Add(12, new Point3d(14600.00, 1623.74, 863.36));
+                pdict.Add(13, new Point3d(-600.00, 2416.63, 1284.94));
+                pdict.Add(14, new Point3d(-600.00, 2416.63, 1284.94));
+                pdict.Add(15, new Point3d(5000.00, 2416.63, 1284.94));
+                pdict.Add(16, new Point3d(9000.00, 2416.63, 1284.94));
+                pdict.Add(17, new Point3d(9000.00, 2416.63, 1284.94));
+                pdict.Add(18, new Point3d(14600.00, 2416.63, 1284.94));
+                pdict.Add(19, new Point3d(-600.00, 3652.75, 1942.20));
+                pdict.Add(20, new Point3d(1000.00, 3652.75, 1942.20));
+
+
+
+
+                List<Nodes> list = new List<Nodes>();
+                list.Add(new Nodes(1, 2));
+                list.Add(new Nodes(2, 3));
+                list.Add(new Nodes(3, 4));
+                list.Add(new Nodes(4, 5));
+                list.Add(new Nodes(5, 6));
+                list.Add(new Nodes(7, 8));
+                list.Add(new Nodes(8, 9));
+                list.Add(new Nodes(9, 10));
+                list.Add(new Nodes(10, 11));
+                list.Add(new Nodes(11, 12));
+                list.Add(new Nodes(13, 14));
+                list.Add(new Nodes(14, 15));
+                list.Add(new Nodes(15, 16));
+                list.Add(new Nodes(16, 17));
+                list.Add(new Nodes(17, 18));
+                list.Add(new Nodes(19, 20));
+
+                foreach (var item in list)
+                {
+                    Poly3dType poly3DType = Poly3dType.SimplePoly;
+                    Point3dCollection point3DCollection = new Point3dCollection();
+                    point3DCollection.Add(pdict[item.startNode]);
+                    point3DCollection.Add(pdict[item.endNode]);
+                    bool isClosed = false;
+                    Polyline3d polyline3D = new Polyline3d(poly3DType, point3DCollection, isClosed);
+                    db.AddToModelSpace(polyline3D);
+
+                    //Line line = new Line();
+                    //line.StartPoint = pdict[item.startNode];
+                    //line.EndPoint = pdict[item.endNode];
+                    //db.AddToModelSpace(line);
+                }
+                tx.Commit();
+            }
+        }
+
+
+
+    }
+
+    public class Nodes
+    {
+        public Nodes(int startNode, int endNode)
+        {
+            this.startNode = startNode;
+            this.endNode = endNode;
+        }
+
+        public int startNode { get; set; }
+
+        public int endNode { get; set; }
     }
 }
