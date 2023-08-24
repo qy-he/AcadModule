@@ -76,7 +76,20 @@ namespace AcadModule
         }
 
 
+        /// <summary>
+        /// 包住所有点的最大长度
+        /// </summary>
+        /// <param name="points">点列表</param>
+        /// <returns>最大的高度</returns>
+        public double GetMaxLength(List<Point3d> points)
+        {
+            Point3d minPoint = GetMinPoint(points);
+            Point3d maxPoint = GetMaxPoint(points);
 
+            double maxLength = maxPoint.X - minPoint.X;
+
+            return maxLength;
+        }
 
 
 

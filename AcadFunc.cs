@@ -312,6 +312,9 @@ namespace AcadModule
         }
 
 
+
+
+
         /// <summary>
         /// 清除所有属性
         /// </summary>
@@ -687,54 +690,47 @@ namespace AcadModule
 
         public static void CreateSolarPanel()
         {
+            Dictionary<string, List<string>> dictionary = GetSectionAndValueMapFromFile(@"C:\Users\heqianyong\Desktop\光伏支架\单桩单立柱-抱箍.3D3S");
+            Dictionary<int,Point3d> pdict = new Dictionary<int, Point3d>();
+            List<Eleline> Linelist = new List<Eleline>();
+            if (dictionary.ContainsKey("*NODE"))
+            {
+                List<string> list = dictionary["*NODE"];
+                foreach (var item in list)
+                {
+                    string[] nodes = item.Split(',');
+                    if (nodes.Count() > 3)
+                    {
+                        pdict.Add(Convert.ToInt32(nodes[0]), new Point3d(Convert.ToDouble(nodes[1]), Convert.ToDouble(nodes[2]), Convert.ToDouble(nodes[3])));
+                    }
+                }
+            }
+            if (dictionary.ContainsKey("*ELE_LINE"))
+            {
+                List<string> list = dictionary["*ELE_LINE"];
+                foreach (var item in list)
+                {
+                    string[] Lines = item.Split(',');
+                    if (Lines.Count() > 7)
+                    {
+                        Eleline line = new Eleline();
+                        line.unitNumber = Convert.ToInt32(Lines[0]);
+                        line.unitType = Lines[1].Trim();
+                        line.materialNumber = Convert.ToInt32(Lines[2]);
+                        line.sectionType = Convert.ToInt32(Lines[3]);
+                        line.sectionNumber = Convert.ToInt32(Lines[4]);
+                        line.startNode = Convert.ToInt32(Lines[5]);
+                        line.endNode = Convert.ToInt32(Lines[6]);
+                        Linelist.Add(line);
+                    }
+                }
+            }
+
             Document doc = Application.DocumentManager.MdiActiveDocument;
             Database db = doc.Database;
             using (Transaction tx = db.TransactionManager.StartTransaction())
             {
-                Dictionary<int,Point3d> pdict = new Dictionary<int, Point3d>();
-                pdict.Add(1,new Point3d(-600.00, 387.61, 206.10));
-                pdict.Add(2,new Point3d(1000.00, 387.61, 206.10));
-                pdict.Add(3,new Point3d(5000.00, 387.61, 206.10));
-                pdict.Add(4,new Point3d(9000.00, 387.61, 206.10));
-                pdict.Add(5,new Point3d(13000.00, 387.61, 206.10));
-                pdict.Add(6,new Point3d(14600.00, 387.61, 206.10));
-                pdict.Add(7,new Point3d(-600.00, 1623.74, 863.36));
-                pdict.Add(8,new Point3d(1000.00, 1623.74, 863.36));
-                pdict.Add(9, new Point3d(5000.00, 1623.74, 863.36));
-                pdict.Add(10, new Point3d(9000.00, 1623.74, 863.36));
-                pdict.Add(11, new Point3d(13000.00, 1623.74, 863.36));
-                pdict.Add(12, new Point3d(14600.00, 1623.74, 863.36));
-                pdict.Add(13, new Point3d(-600.00, 2416.63, 1284.94));
-                pdict.Add(14, new Point3d(-600.00, 2416.63, 1284.94));
-                pdict.Add(15, new Point3d(5000.00, 2416.63, 1284.94));
-                pdict.Add(16, new Point3d(9000.00, 2416.63, 1284.94));
-                pdict.Add(17, new Point3d(9000.00, 2416.63, 1284.94));
-                pdict.Add(18, new Point3d(14600.00, 2416.63, 1284.94));
-                pdict.Add(19, new Point3d(-600.00, 3652.75, 1942.20));
-                pdict.Add(20, new Point3d(1000.00, 3652.75, 1942.20));
-
-
-
-
-                List<Nodes> list = new List<Nodes>();
-                list.Add(new Nodes(1, 2));
-                list.Add(new Nodes(2, 3));
-                list.Add(new Nodes(3, 4));
-                list.Add(new Nodes(4, 5));
-                list.Add(new Nodes(5, 6));
-                list.Add(new Nodes(7, 8));
-                list.Add(new Nodes(8, 9));
-                list.Add(new Nodes(9, 10));
-                list.Add(new Nodes(10, 11));
-                list.Add(new Nodes(11, 12));
-                list.Add(new Nodes(13, 14));
-                list.Add(new Nodes(14, 15));
-                list.Add(new Nodes(15, 16));
-                list.Add(new Nodes(16, 17));
-                list.Add(new Nodes(17, 18));
-                list.Add(new Nodes(19, 20));
-
-                foreach (var item in list)
+                foreach (var item in Linelist)
                 {
                     Poly3dType poly3DType = Poly3dType.SimplePoly;
                     Point3dCollection point3DCollection = new Point3dCollection();
@@ -743,30 +739,59 @@ namespace AcadModule
                     bool isClosed = false;
                     Polyline3d polyline3D = new Polyline3d(poly3DType, point3DCollection, isClosed);
                     db.AddToModelSpace(polyline3D);
-
-                    //Line line = new Line();
-                    //line.StartPoint = pdict[item.startNode];
-                    //line.EndPoint = pdict[item.endNode];
-                    //db.AddToModelSpace(line);
                 }
                 tx.Commit();
             }
         }
 
 
-
-    }
-
-    public class Nodes
-    {
-        public Nodes(int startNode, int endNode)
+        //
+        // 摘要:
+        //     读取txt文件内容,判断文件是否存在
+        //
+        // 返回结果:
+        //     节点和相应内容列表的映射，如果读取失败，返回空的映射
+        private static Dictionary<string, List<string>> GetSectionAndValueMapFromFile(string m_pathName)
         {
-            this.startNode = startNode;
-            this.endNode = endNode;
+            Dictionary<string, List<string>> dictionary = new Dictionary<string, List<string>>();
+            if (!File.Exists(m_pathName))
+            {
+                return dictionary;
+            }
+
+
+            StreamReader streamReader = new StreamReader(m_pathName);
+            string text;
+            while ((text = streamReader.ReadLine()) != null && text != "*END")
+            {
+                string text2 = text.Trim();
+                if (string.IsNullOrEmpty(text2))
+                {
+                    continue;
+                }
+
+                if (text == "*END")
+                {
+                    break;
+                }
+
+                if (text2[0] == '*')
+                {
+                    List<string> list = new List<string>();
+                    while (!string.IsNullOrEmpty(text = streamReader.ReadLine()))
+                    {
+                        list.Add(text);
+                    }
+
+                    if (list.Count > 0)
+                    {
+                        dictionary[text2] = list;
+                    }
+                }
+            }
+
+            return dictionary;
         }
 
-        public int startNode { get; set; }
-
-        public int endNode { get; set; }
     }
 }

@@ -55,7 +55,7 @@ namespace AcadModule
                         }
                     }
                     var blkRef = new BlockReference(insertPoint, blkId);
-                    blkRef.ScaleFactors = new Scale3d(Scale, Scale, 1);
+                    blkRef.ScaleFactors = new Scale3d(Scale, Scale, Scale);
                     blkRef.Rotation = rotation;
                     btrSpace.AppendEntity(blkRef);
                     blkRef.SetDatabaseDefaults();

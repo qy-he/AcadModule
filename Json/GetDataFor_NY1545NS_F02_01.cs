@@ -45,6 +45,62 @@ namespace RevitCAD.光伏工具.OutputDrawing.PowerGenerationDrawing.Utils
 
 
 
+        public Dictionary<string, List<string>> GetCrystalSilicon()
+        {
+            Dictionary<string, List<string>> dictlist = new Dictionary<string, List<string>>();
+            List<PvComponents> pvList = m_nDPDocument.PvComponents;
+            Dictionary<int, string> pvdict = new Dictionary<int, string>();
+            foreach (PvComponents pv in pvList)
+            {
+                pvdict.Add(pv.Id, pv.CategoryOfsolarCells + "组件");
+            }
+
+
+
+            List<PvpItem> PvpList = m_nDPDocument.Pvp;
+            foreach (PvpItem pvp in PvpList)
+            {
+                string key = pvp.CNumberPerColumn + "x" + pvp.CNumberPerRow;
+                if (!pvdict.ContainsKey(pvp.Id))
+                {
+                    continue;
+                }
+                string value = key + pvdict[pvp.Id];
+                if (!dictlist.ContainsKey(key))
+                {
+                    List<string> list = new List<string>();
+                    list.Add(value);
+                    dictlist.Add(key, list);
+                }
+                else if (!dictlist[key].Contains(value))
+                {
+                    dictlist[key].Add(value);
+                }
+            }
+            return dictlist;
+        }
+
+
+
+        //"2x14"    "2x14单列单晶硅组件"
+//2x28长单列单晶硅组件
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public Dictionary<string,string> GetConfiuence(List<DeviceItem> deviceItems)
         {

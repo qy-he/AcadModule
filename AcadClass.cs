@@ -128,7 +128,7 @@ namespace AcadModule
             string FontName = "sepd_tss.shx";
             string BigFontName = "sepd_HZT.SHX";
             DimStyleInfo dimInfo = new DimStyleInfo();
-            dimInfo.Name = "Sepd_1_100_1";
+            dimInfo.Name = "TSSD" + "_" + 25 + "_" + 25;
             dimInfo.Dimblk = DimTools.GetArrowObjectId(Application.DocumentManager.MdiActiveDocument.Database, DimArrowBlock.ArchitecturalTick);
             dimInfo.Dimblk1 = DimTools.GetArrowObjectId(Application.DocumentManager.MdiActiveDocument.Database, DimArrowBlock.ClosedFilled);
             dimInfo.Dimaltf = 25;
@@ -176,7 +176,7 @@ namespace AcadModule
             {
                 try
                 {
-                    objectid = DimStyleFunc.AddDimStyle(dimInfo.Name, dimInfo);
+                    objectid = DimStyleFunc.AddDimStyle(dimInfo.Name, dimInfo, 25, 25);
                 }
                 catch (System.Exception)
                 {
@@ -333,6 +333,45 @@ namespace AcadModule
         public void AcsSolarPanel()
         {
             AcadFunc.CreateSolarPanel();
+        }
+
+
+        [CommandMethod("AcsSolarPanelBracket")]
+        public void AcsSolarPanelBracket()
+        {
+            string filepath = @"C:\Users\heqianyong\Desktop\光伏支架\2-13-3-0726.json";
+            //SolarPanelFunc.CreateSolarPanelBracket(filepath);
+
+            Point3d basePoint = new Point3d(0, 0, 0);
+            Point3d tablePoint = new Point3d(3000, 0, 0);
+            Point3d arrayPoint = new Point3d(0, 8000, 0);
+            //string path = @"C:\Users\heqianyong\Desktop\光伏支架";
+            string path = @"C:\Users\heqianyong\Desktop\新块测试";
+            SolarPanelFunc.CreateSolarPanelBracket(filepath, basePoint, path, tablePoint, 25, 9, arrayPoint);
+            //SolarPanelFunc.CreateSolarPanelBracketForm(filepath, insertPoint);
+
+            //basePoint = new Point3d(60000, 0, 0);
+            //tablePoint = new Point3d(75000, 0, 0);
+            //filepath = @"C:\Users\heqianyong\Desktop\光伏支架\0811.json";
+            //SolarPanelFunc.CreateSolarPanelBracket(filepath, basePoint, path, tablePoint, 25, 9);
+        }
+
+        [CommandMethod("AcsUniversal")]
+        public void AcsUniversal()
+        {
+            List<List<string>> dataArrLst = new List<List<string>>()
+            {
+                new   List<string> {  "序号",       "电缆编号",     "始点",       "终点",          "规格",            "单位",    "长度",    "备注"},
+                new   List<string> {  "1",        "N1501-01",     "组串150101+",    "逆变器N1501", "PV1-F-1×4mm",      "米",    "49",       "颜色：红"},
+                new   List<string> {  "2",        "N1501-02",     "组串150101-",    "逆变器N1501", "PV1-F-1×4mm",      "米",    "49",       "颜色：黑"},
+                new   List<string> {  "2",        "N1501-03",     "组串150102+" ,   "逆变器N1501", "PV1-F-1×4mm",      "米" ,   "53",       "颜色：红"},
+                new   List<string> {  "5",        "N1501-04",     "组串150102-",    "逆变器N1501", "PV1-F-1×4mm",      "米" ,   "53",       "颜色：黑"},
+                new   List<string> {  "4",        "N1501-05",     "组串150103+" ,   "逆变器N1501", "PV1-F-1×4mm",      "米",    "39",       "颜色：红"},
+                new   List<string> {  "5",        "N1501-06",     "组串150103-",    "逆变器N1501", "PV1-F-1×4mm",      "米",    "39",       "颜色：黑"},
+                new   List<string> {  "7",        "N1501-07",     "组串150104+",    "逆变器N1501", "PV1-F-1×4mm",      "米",    "25",       "颜色：红"}
+            };
+            UniversalFunc universal = new UniversalFunc();
+            universal.GetTheSameInformationMap(dataArrLst);
         }
     }
 }

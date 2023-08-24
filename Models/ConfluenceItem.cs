@@ -15,6 +15,11 @@ namespace Mrf.Photovoltaic.Tools.Models
         public int Level { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string ConfluenceMode { get; set; }
+
+        /// <summary>
         /// 编号
         /// </summary>
         public string Code { get; set; }

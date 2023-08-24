@@ -32,7 +32,15 @@ namespace AcadModule
             return ds[dimStyleName];
         }
 
-        public static ObjectId AddDimStyle(string dimStyleName, DimStyleInfo dsinfo)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dimStyleName">标注样式名</param>
+        /// <param name="dsinfo">标注样式类</param>
+        /// <param name="scale1">标注线性比例</param>
+        /// <param name="scale2">文字高度比例</param>
+        /// <returns></returns>
+        public static ObjectId AddDimStyle(string dimStyleName, DimStyleInfo dsinfo,double scale1,double scale2)
         {
             try
             {
@@ -76,7 +84,7 @@ namespace AcadModule
                     dstr.Dimgap = dsinfo.Dimgap;
                     dstr.Dimtxsty = dsinfo.Dimtxsty;
                     dstr.Dimclrt = dsinfo.Dimclrt;
-                    dstr.Dimtxt = dsinfo.Dimtxt;
+                    dstr.Dimtxt = 3.5 * scale2; //文字高度
                     dstr.Dimblk = dsinfo.Dimblk;
                     dstr.Dimblk1 = dsinfo.Dimblk1;
                     dstr.Dimblk2 = dsinfo.Dimblk2;
@@ -85,7 +93,7 @@ namespace AcadModule
                     dstr.Dimtmove = dsinfo.Dimtmove;
                     dstr.Dimatfit = dsinfo.Dimatfit;
                     dstr.Dimlunit = dsinfo.Dimlunit;
-                    dstr.Dimlfac = dsinfo.Dimlfac;
+                    dstr.Dimlfac = scale1 / scale2;
                     dstr.Dimtofl = dsinfo.Dimtofl;
                     dstr.Dimadec = dsinfo.Dimadec;
                     dstr.DimfxlenOn = true;
